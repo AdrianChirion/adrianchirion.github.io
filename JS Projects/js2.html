@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <link rel="icon" href="../favicon.png">
+    <title>Loan Calculator</title>
+    
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    <style>
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #loading, #results {
+        display: none;
+      }
+
+      h2 {
+        color: white;
+        font-size: 40px;
+      }
+
+      .sourceCode {
+        background-color: #C0C0C0; 
+        padding-left: 15px;
+      }
+    </style>
+
+  </head>
+  <body class="bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mx-auto">
+          <div class="card card-body text-center mt-5">
+            <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+            <form id="loan-form">
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">$</span>
+                  <input type="number" class="form-control" id="amount" placeholder="Loan Amount">
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">%</span>
+                  <input type="number" class="form-control" id="interest" placeholder="Interest">
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="number" class="form-control" id="years" placeholder="Years To Repay">
+              </div>
+              <div class="forn-group">
+                <input type="submit" value="Calculate" class="btn btn-dark btn-block">
+              </div>
+            </form>
+
+            <!-- LOADER -->
+            <div id="loading">
+              <img src="img/loading.gif" alt="">
+            </div>
+            
+            <!-- RESULTS -->
+            <div id="results" class="pt-4">
+              <h5>Results</h5>
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Monthly Payment</span>
+                  <input type="number" class="form-control" id="monthly-payment" disabled>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Payment</span>
+                  <input type="number" class="form-control" id="total-payment" disabled>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <div class="input-group">
+                  <span class="input-group-addon">Total Interest</span>
+                  <input type="number" class="form-control" id="total-interest" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br> 
+
+    <h2>HTML Code</h2>
+
+    <div class="sourceCode">
+      <pre>
+        <code>
+&#x3C;!doctype html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+  &#x3C;head&#x3E;
+
+    &#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+    &#x3C;title&#x3E;Loan Calculator&#x3C;/title&#x3E;
+    
+    &#x3C;!-- Required meta tags --&#x3E;
+    &#x3C;meta charset=&#x22;utf-8&#x22;&#x3E;
+    &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1, shrink-to-fit=no&#x22;&#x3E;
+
+    &#x3C;!-- Bootstrap CSS --&#x3E;
+    &#x3C;link rel=&#x22;stylesheet&#x22; 
+    href=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css&#x22; 
+    integrity=&#x22;sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb&#x22; 
+    crossorigin=&#x22;anonymous&#x22;&#x3E;
+
+    &#x3C;style&#x3E;
+      #loading, #results {
+        display: none;
+      }
+
+      h2 {
+        color: white;
+        font-size: 50px;
+      }
+
+
+    &#x3C;/style&#x3E;
+
+  &#x3C;/head&#x3E;
+  &#x3C;body class=&#x22;bg-dark&#x22;&#x3E;
+    &#x3C;div class=&#x22;container&#x22;&#x3E;
+      &#x3C;div class=&#x22;row&#x22;&#x3E;
+        &#x3C;div class=&#x22;col-md-6 mx-auto&#x22;&#x3E;
+          &#x3C;div class=&#x22;card card-body text-center mt-5&#x22;&#x3E;
+            &#x3C;h1 class=&#x22;heading display-5 pb-3&#x22;&#x3E;Loan Calculator&#x3C;/h1&#x3E;
+            &#x3C;form id=&#x22;loan-form&#x22;&#x3E;
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group&#x22;&#x3E;
+                  &#x3C;span class=&#x22;input-group-addon&#x22;&#x3E;$&#x3C;/span&#x3E;
+                  &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;amount&#x22; placeholder=&#x22;Loan Amount&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group&#x22;&#x3E;
+                  &#x3C;span class=&#x22;input-group-addon&#x22;&#x3E;%&#x3C;/span&#x3E;
+                  &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;interest&#x22; placeholder=&#x22;Interest&#x22;&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;years&#x22; placeholder=&#x22;Years To Repay&#x22;&#x3E;
+              &#x3C;/div&#x3E;
+              &#x3C;div class=&#x22;forn-group&#x22;&#x3E;
+                &#x3C;input type=&#x22;submit&#x22; value=&#x22;Calculate&#x22; class=&#x22;btn btn-dark btn-block&#x22;&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/form&#x3E;
+
+            &#x3C;!-- LOADER --&#x3E;
+            &#x3C;div id=&#x22;loading&#x22;&#x3E;
+              &#x3C;img src=&#x22;img/loading.gif&#x22; alt=&#x22;&#x22;&#x3E;
+            &#x3C;/div&#x3E;
+            
+            &#x3C;!-- RESULTS --&#x3E;
+            &#x3C;div id=&#x22;results&#x22; class=&#x22;pt-4&#x22;&#x3E;
+              &#x3C;h5&#x3E;Results&#x3C;/h5&#x3E;
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group&#x22;&#x3E;
+                  &#x3C;span class=&#x22;input-group-addon&#x22;&#x3E;Monthly Payment&#x3C;/span&#x3E;
+                  &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;monthly-payment&#x22; disabled&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group&#x22;&#x3E;
+                  &#x3C;span class=&#x22;input-group-addon&#x22;&#x3E;Total Payment&#x3C;/span&#x3E;
+                  &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;total-payment&#x22; disabled&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+
+              &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;div class=&#x22;input-group&#x22;&#x3E;
+                  &#x3C;span class=&#x22;input-group-addon&#x22;&#x3E;Total Interest&#x3C;/span&#x3E;
+                  &#x3C;input type=&#x22;number&#x22; class=&#x22;form-control&#x22; id=&#x22;total-interest&#x22; disabled&#x3E;
+                &#x3C;/div&#x3E;
+              &#x3C;/div&#x3E;
+            &#x3C;/div&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+
+    &#x3C;!-- Optional JavaScript --&#x3E;
+    &#x3C;!-- jQuery first, then Popper.js, then Bootstrap JS --&#x3E;
+    &#x3C;script src=&#x22;https://code.jquery.com/jquery-3.2.1.slim.min.js&#x22; 
+    integrity=&#x22;sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN&#x22; 
+    crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+
+    &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js&#x22; 
+    integrity=&#x22;sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh&#x22; 
+    crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+
+    &#x3C;script src=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js&#x22; 
+    integrity=&#x22;sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ&#x22; 
+    crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+
+    &#x3C;script src=&#x22;JS/loan.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;/body&#x3E;
+&#x3C;/html&#x3E; 
+        </code>
+      </pre>
+    </div>
+
+    <h2>Java Script Code</h2>
+
+    <br>
+
+    <div class="sourceCode">
+      <pre>
+        <code>
+// Listen for submit
+document.getElementById(&#x27;loan-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e) {
+  // Hide results
+  document.getElementById(&#x27;results&#x27;).style.display = &#x27;none&#x27;;
+ 
+  // Show loader
+  document.getElementById(&#x27;loading&#x27;).style.display = &#x27;block&#x27;;
+
+  setTimeout(calculateResults, 2000);
+
+  e.preventDefault();
+});
+
+// Calculate Results
+function calculateResults(){
+  console.log(&#x27;Calculating...&#x27;);
+  // UI Vars
+  const amount = document.getElementById(&#x27;amount&#x27;);
+  const interest = document.getElementById(&#x27;interest&#x27;);
+  const years = document.getElementById(&#x27;years&#x27;);
+  const monthlyPayment = document.getElementById(&#x27;monthly-payment&#x27;);
+  const totalPayment = document.getElementById(&#x27;total-payment&#x27;);
+  const totalInterest = document.getElementById(&#x27;total-interest&#x27;);
+
+  const principal = parseFloat(amount.value);
+  const calculatedInterest = parseFloat(interest.value) / 100 / 12;
+  const calculatedPayments = parseFloat(years.value) * 12;
+
+  // Compute monthly payment
+  const x = Math.pow(1 + calculatedInterest, calculatedPayments);
+  const monthly = (principal*x*calculatedInterest)/(x-1);
+
+  if(isFinite(monthly)) {
+    monthlyPayment.value = monthly.toFixed(2);
+    totalPayment.value = (monthly * calculatedPayments).toFixed(2);
+    totalInterest.value = ((monthly * calculatedPayments)-principal).toFixed(2);
+    
+    // Show results
+    document.getElementById(&#x27;results&#x27;).style.display = &#x27;block&#x27;;
+
+    // Hide loader
+    document.getElementById(&#x27;loading&#x27;).style.display = &#x27;none&#x27;;
+  } else {
+    showError(&#x27;Please check your numbers&#x27;);
+  }
+}
+
+// Show Error
+function showError(error){
+  // Hide results
+  document.getElementById(&#x27;results&#x27;).style.display = &#x27;none&#x27;;
+
+  // Hide loader
+  document.getElementById(&#x27;loading&#x27;).style.display = &#x27;none&#x27;;
+
+  // Create a div
+  const errorDiv = document.createElement(&#x27;div&#x27;);
+
+  // Get elements
+  const card = document.querySelector(&#x27;.card&#x27;);
+  const heading = document.querySelector(&#x27;.heading&#x27;);
+
+  // Add class
+  errorDiv.className = &#x27;alert alert-danger&#x27;;
+
+  // Create text node and append to div
+  errorDiv.appendChild(document.createTextNode(error));
+
+  // Insert error above heading
+  card.insertBefore(errorDiv, heading);
+
+  // Clear error after 3 seconds
+  setTimeout(clearError, 3000);
+}
+
+// Clear error
+function clearError(){
+  document.querySelector(&#x27;.alert&#x27;).remove();
+}
+        </code>
+      </pre>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <script src="loan.js" async></script>
+  </body>
+</html>

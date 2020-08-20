@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Personal Blog</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="../favicon.png">
+
+  <style>
+    header {
+      text-align: center;
+      background: url('https://i.imgur.com/bpntmEx.jpg');
+      background-size: cover;
+      color: white;
+    }
+    a {
+      color: white;
+    }
+    h1 {
+      font-size: 80px;
+      color: blue;
+    }
+
+    h2 {
+      font-size: 40px;
+    }
+
+    img {
+      margin: 40px 0px 0px 0px;
+      border: 7px;
+      border-radius: 20px;
+    }
+    ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+    article {
+      max-width: 500px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 36px;
+        padding: 5px;
+      }
+      li {
+        padding: 5px;
+        display: block;
+      }
+    }
+
+    .sourceCode {
+      background-color: #C0C0C0; 
+      padding-left: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+
+    <img src="" alt="">
+    <h1 tabindex="0">Adrian's Blog</h1>
+    <ul>
+      <li><a tabindex="0">About Me</a></li>
+      <li><a tabindex="0">Recent NASA Discoveries</a></li>
+      <li><a tabindex="0">Future Plans</a></li>
+    </ul>
+  </header>
+
+  <article>
+    <h2 tabindex="0">NASA's SDO Enters Eclipse Season</h2>
+    <p tabindex="0">NASA's Solar Dynamics Observatory had witnessed a total eclipse on the 11th of February. This eclipse occured when the Earth passed through its view of the sun. This brief passing marks the start of "eclipse season" for the SDO, it also wasn't too long ago that our own moon also crossed the SDO's view of the sun creating a shadowy image. More info here: https://www.nasa.gov/feature/goddard/2018/eclipse-season-starts-for-nasa-s-sdo</p>
+    <button tabindex="0">Like</button>
+  </article>
+  <article>
+    <h2 tabindex="0">A X8.2-Class Solar Flare is Spotted by the SDO</h2>
+    <p tabindex="0">An intense solar flare was spotted erupting from the sun in the active region of 2673. The designation X8.2 indicates just how intense the flare actually was with X being given to the most intense flares. Although the radiation from the flare won't be able to harm us thanks to our atmosphere if the flare was intense enough it supposedly could interfere with our communication signals. Pretty scary to think that our communications could be disrupted by a solar flare or perhaps cut by a CME! </p>
+    <button tabindex="0">Like</button>
+  </article>
+  <article>
+    <h2 tabindex="0">NASA's GOLD Mission has Launched!</h2>
+    <p tabindex="0">On the 25th of January NASA launched its 'Global-scale Observations of the Limb and Disk' mission, a mission with the goal of giving us a better understanding of space weather. This mission is important to us since it studies the region of space that houses satellites, astronauts at the ISS, GPS signals, and radio signals. I wonder what new information will come about from this new mission?</p>
+    <button tabindex="0">Like</button>
+  </article>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>HTML/JS Code</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+        &#x3C;!DOCTYPE html&#x3E;
+&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+
+  &#x3C;title&#x3E;Personal Blog&#x3C;/title&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Open+Sans&#x22;&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Merriweather&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Roboto&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+  &#x3C;script src=&#x22;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+
+  &#x3C;style&#x3E;
+    header {
+      text-align: center;
+      background: url(&#x27;https://i.imgur.com/bpntmEx.jpg&#x27;);
+      background-size: cover;
+      color: white;
+    }
+    a {
+      color: white;
+    }
+    h1 {
+      font-size: 80px;
+      color: blue;
+    }
+    img {
+      margin: 40px 0px 0px 0px;
+      border: 7px;
+      border-radius: 20px;
+    }
+    ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+    article {
+      max-width: 500px;
+      padding: 20px;
+      margin: 0 auto;
+    }
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 36px;
+        padding: 5px;
+      }
+      li {
+        padding: 5px;
+        display: block;
+      }
+    }
+  &#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+  &#x3C;header&#x3E;
+
+    &#x3C;img src=&#x22;&#x22; alt=&#x22;&#x22;&#x3E;
+    &#x3C;h1 tabindex=&#x22;0&#x22;&#x3E;Adrian&#x27;s Blog&#x3C;/h1&#x3E;
+    &#x3C;ul&#x3E;
+      &#x3C;li&#x3E;&#x3C;a tabindex=&#x22;0&#x22;&#x3E;About Me&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a tabindex=&#x22;0&#x22;&#x3E;Recent NASA Discoveries&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+      &#x3C;li&#x3E;&#x3C;a tabindex=&#x22;0&#x22;&#x3E;Future Plans&#x3C;/a&#x3E;&#x3C;/li&#x3E;
+    &#x3C;/ul&#x3E;
+  &#x3C;/header&#x3E;
+
+  &#x3C;article&#x3E;
+    &#x3C;h2 tabindex=&#x22;0&#x22;&#x3E;NASA&#x27;s SDO Enters Eclipse Season&#x3C;/h2&#x3E;
+    &#x3C;p tabindex=&#x22;0&#x22;&#x3E;NASA&#x27;s Solar Dynamics Observatory had witnessed a total eclipse on the 11th of February. 
+    This eclipse occured when the Earth passed through its view of the sun. 
+    This brief passing marks the start of &#x22;eclipse season&#x22; for the SDO, it also wasn&#x27;t too long ago that our own moon also crossed the SDO&#x27;s view of the sun creating a shadowy image. 
+    More info here: https://www.nasa.gov/feature/goddard/2018/eclipse-season-starts-for-nasa-s-sdo&#x3C;/p&#x3E;
+    &#x3C;button tabindex=&#x22;0&#x22;&#x3E;Like&#x3C;/button&#x3E;
+  &#x3C;/article&#x3E;
+  &#x3C;article&#x3E;
+    &#x3C;h2 tabindex=&#x22;0&#x22;&#x3E;A X8.2-Class Solar Flare is Spotted by the SDO&#x3C;/h2&#x3E;
+    &#x3C;p tabindex=&#x22;0&#x22;&#x3E;An intense solar flare was spotted erupting from the sun in the active region of 2673. 
+    The designation X8.2 indicates just how intense the flare actually was with X being given to the most intense flares. 
+    Although the radiation from the flare won&#x27;t be able to harm us thanks to our atmosphere if the flare was intense enough it supposedly could interfere with our communication signals. 
+    Pretty scary to think that our communications could be disrupted by a solar flare or perhaps cut by a CME! &#x3C;/p&#x3E;
+    &#x3C;button tabindex=&#x22;0&#x22;&#x3E;Like&#x3C;/button&#x3E;
+  &#x3C;/article&#x3E;
+  &#x3C;article&#x3E;
+    &#x3C;h2 tabindex=&#x22;0&#x22;&#x3E;NASA&#x27;s GOLD Mission has Launched!&#x3C;/h2&#x3E;
+    &#x3C;p tabindex=&#x22;0&#x22;&#x3E;On the 25th of January NASA launched its &#x27;Global-scale Observations of the Limb and Disk&#x27; mission, 
+    a mission with the goal of giving us a better understanding of space weather. 
+    This mission is important to us since it studies the region of space that houses satellites, astronauts at the ISS, GPS signals, and radio signals. 
+    I wonder what new information will come about from this new mission?&#x3C;/p&#x3E;
+    &#x3C;button tabindex=&#x22;0&#x22;&#x3E;Like&#x3C;/button&#x3E;
+  &#x3C;/article&#x3E;
+
+  &#x3C;script&#x3E;
+    $(&#x22;button&#x22;).on(&#x22;click&#x22;, function() {
+      alert(&#x22;Thanks for the like!&#x22;);
+    });
+  &#x3C;/script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+
+  <script>
+    $("button").on("click", function() {
+      alert("Thanks for the like!");
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css"/>
+  <link rel="icon" href="../favicon.png">
+  <title>Number Guesser</title>
+
+<style>
+  code {
+      background-color: #C0C0C0; 
+    } 
+
+  h2 {
+    font-size: 40px;
+  }  
+</style>
+
+</head>
+<body>
+  <div class="container">
+    <h1>Number Guesser</h1>
+    <div id="game">
+      <p>Guess a number between <span class="min-num"></span> and <span class="max-num"></span></p>
+      <input type="number" id="guess-input" placeholder="Enter your guess...">
+      <input type="submit" value="Submit" id="guess-btn">
+      <p class="message"></p>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br> 
+
+  <h2>HTML Code</h2>
+
+  <div>
+    <pre>
+      <code>
+&#x3C;!DOCTYPE html&#x3E;
+
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;ie=edge&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css&#x22;/&#x3E;
+  &#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+  &#x3C;title&#x3E;Number Guesser&#x3C;/title&#x3E;
+
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;div class=&#x22;container&#x22;&#x3E;
+    &#x3C;h1&#x3E;Number Guesser&#x3C;/h1&#x3E;
+    &#x3C;div id=&#x22;game&#x22;&#x3E;
+      &#x3C;p&#x3E;Guess a number between &#x3C;span class=&#x22;min-num&#x22;&#x3E;&#x3C;/span&#x3E; and &#x3C;span class=&#x22;max-num&#x22;&#x3E;&#x3C;/span&#x3E;&#x3C;/p&#x3E;
+      &#x3C;input type=&#x22;number&#x22; id=&#x22;guess-input&#x22; placeholder=&#x22;Enter your guess...&#x22;&#x3E;
+      &#x3C;input type=&#x22;submit&#x22; value=&#x22;Submit&#x22; id=&#x22;guess-btn&#x22;&#x3E;
+      &#x3C;p class=&#x22;message&#x22;&#x3E;&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+
+  &#x3C;script src=&#x22;JS/guesser.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+  
+  <h2>Java Script Code</h2>
+
+  <div>
+    <pre>
+      <code>
+/*
+GAME FUNCTION:
+- Player must guess a number between a min and max
+- Player gets a certain amount of guesses
+- Notify player of guesses remaining
+- Notify the player of the correct answer if loose
+- Let player choose to play again
+*/
+
+// Game values
+let min = 1,
+    max = 10,
+    winningNum = getRandomNum(min, max),
+    guessesLeft = 3;
+
+// UI Elements
+const game = document.querySelector(&#x27;#game&#x27;),
+      minNum = document.querySelector(&#x27;.min-num&#x27;),
+      maxNum = document.querySelector(&#x27;.max-num&#x27;),
+      guessBtn = document.querySelector(&#x27;#guess-btn&#x27;),
+      guessInput = document.querySelector(&#x27;#guess-input&#x27;),
+      message = document.querySelector(&#x27;.message&#x27;);
+
+// Assign UI min and max
+minNum.textContent = min;
+maxNum.textContent = max;
+
+// Play again event listener
+game.addEventListener(&#x27;mousedown&#x27;, function(e){
+  if(e.target.className === &#x27;play-again&#x27;){
+    window.location.reload();
+  }
+});
+      
+// Listen for guess
+guessBtn.addEventListener(&#x27;click&#x27;, function(){
+  let guess = parseInt(guessInput.value);
+  
+  // Validate
+  if(isNaN(guess) || guess &#x3C; min || guess &#x3E; max){
+    setMessage(&#x60;Please enter a number between ${min} and ${max}&#x60;, &#x27;red&#x27;);
+  }
+
+  // Check if won
+  if(guess === winningNum){
+    // Game over - won
+    gameOver(true, &#x60;${winningNum} is correct, YOU WIN!&#x60;);
+
+  } else {
+    // Wrong number
+    guessesLeft -= 1;
+
+    if(guessesLeft === 0){
+      // Game over - lost
+      gameOver(false, &#x60;Game Over, you lost. The correct number was ${winningNum}&#x60;);
+    } else {
+      // Game continues - answer wrong
+
+      // Change border color
+      guessInput.style.borderColor = &#x27;red&#x27;;
+
+      // Clear Input
+      guessInput.value = &#x27;&#x27;;
+
+      // Tell user its the wrong number
+      setMessage(&#x60;${guess} is not correct, ${guessesLeft} guesses left&#x60;, &#x27;red&#x27;);
+    }
+  }
+});
+
+// Game over
+function gameOver(won, msg){
+  let color;
+  won === true ? color = &#x27;green&#x27; : color = &#x27;red&#x27;;
+
+  // Disable input
+  guessInput.disabled = true;
+  // Change border color
+  guessInput.style.borderColor = color;
+  // Set text color
+  message.style.color = color;
+  // Set message
+  setMessage(msg);
+
+  // PLay Again?
+  guessBtn.value = &#x27;Play Again&#x27;;
+  guessBtn.className += &#x27;play-again&#x27;;
+}
+
+// Get Winning Number
+function getRandomNum(min, max){
+  return Math.floor(Math.random()*(max-min+1)+min);
+}
+
+// Set message
+function setMessage(msg, color){
+  message.style.color = color;
+  message.textContent = msg;
+}
+      </code>
+    </pre>
+  </div>
+
+  <script src="guesser.js" async></script>
+</body>
+</html>

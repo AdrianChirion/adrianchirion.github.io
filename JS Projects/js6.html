@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+  <link rel="icon" href="../favicon.png">
+  <title>GitHub Finder</title>
+
+  <style>
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #loading, #results {
+        display: none;
+      }
+
+      h2 {
+        color: black;
+        font-size: 40px;
+      }
+
+      .sourceCode {
+        background-color: #C0C0C0; 
+        padding-left: 15px;
+      }
+    </style>
+
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container">
+      <a href="#" class="navbar-brand">GitHub Finder</a>
+    </div>
+  </nav>
+  <div class="container searchContainer">
+    <div class="search card card-body">
+      <h1>Search GitHub Users</h1>
+      <p class="lead">Enter a username to fetch a user profile and repos</p>
+      <input type="text" id="searchUser" class="form-control" placeholder="GitHub Username...">
+    </div>
+    <br>
+    <div id="profile"></div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>HTML Code</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;ie=edge&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://bootswatch.com/4/litera/bootstrap.min.css&#x22;&#x3E;
+  &#x3C;title&#x3E;GitHub Finder&#x3C;/title&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;nav class=&#x22;navbar navbar-dark bg-primary mb-3&#x22;&#x3E;
+    &#x3C;div class=&#x22;container&#x22;&#x3E;
+      &#x3C;a href=&#x22;#&#x22; class=&#x22;navbar-brand&#x22;&#x3E;GitHub Finder&#x3C;/a&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/nav&#x3E;
+  &#x3C;div class=&#x22;container searchContainer&#x22;&#x3E;
+    &#x3C;div class=&#x22;search card card-body&#x22;&#x3E;
+      &#x3C;h1&#x3E;Search GitHub Users&#x3C;/h1&#x3E;
+      &#x3C;p class=&#x22;lead&#x22;&#x3E;Enter a username to fetch a user profile and repos&#x3C;/p&#x3E;
+      &#x3C;input type=&#x22;text&#x22; id=&#x22;searchUser&#x22; class=&#x22;form-control&#x22; placeholder=&#x22;GitHub Username...&#x22;&#x3E;
+    &#x3C;/div&#x3E;
+    &#x3C;br&#x3E;
+    &#x3C;div id=&#x22;profile&#x22;&#x3E;&#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+
+  &#x3C;footer class=&#x22;mt-5 p-3 text-center bg-light&#x22;&#x3E;
+    GitHub Finder &#x26;copy;
+  &#x3C;/footer&#x3E;
+  
+  &#x3C;script src=&#x22;https://code.jquery.com/jquery-3.2.1.slim.min.js&#x22; 
+  integrity=&#x22;sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js&#x22; 
+  integrity=&#x22;sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js&#x22; 
+  integrity=&#x22;sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+
+  &#x3C;script src=&#x22;../JS/GH Finder/github.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;../JS/GH Finder/ui.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;../JS/GH Finder/app.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code: app.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+// Init Github
+const github = new Github;
+// Init UI
+const ui = new UI;
+
+// Search input
+const searchUser = document.getElementById(&#x27;searchUser&#x27;);
+
+// Search input event listener
+searchUser.addEventListener(&#x27;keyup&#x27;, (e) =&#x3E; {
+  // Get input text
+  const userText = e.target.value;
+
+  if(userText !== &#x27;&#x27;){
+   // Make http call
+   github.getUser(userText)
+    .then(data =&#x3E; {
+      if(data.profile.message === &#x27;Not Found&#x27;) {
+        // Show alert
+        ui.showAlert(&#x27;User not found&#x27;, &#x27;alert alert-danger&#x27;);
+      } else {
+        // Show profile
+        ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
+      }
+    })
+  } else {
+    // Clear profile
+    ui.clearProfile();
+  }
+}); 
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code: github.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+  class Github {
+  constructor() {
+    this.client_id = &#x27;bd454eaaac207fb6fd5d&#x27;;
+    this.client_secret = &#x27;6ec3b29b164559c5e80b4b5cfc883df31f7e5359&#x27;;
+    this.repos_count = 10;
+    this.repose_sort = &#x22;created: asc&#x22;;
+  }
+
+  async getUser(user) {
+    const profileResponse = await fetch(&#x60;https://api.github.com/users/${user}?client_id=${this.client_id}&#x26;client_secret=${this.client_secret}&#x60;);
+
+    const repoResponse = await fetch(&#x60;https://api.github.com/users/${user}/repos?per_page=
+    ${this.repos_count}&#x26;sort=${this.repos_sort}&#x26;client_id=${this.client_id}&#x26;client_secret=${this.client_secret}&#x60;);
+
+    const profile = await profileResponse.json();
+    const repos = await repoResponse.json();
+
+    return {
+      profile,
+      repos
+    }
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code: ui.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+  class UI {
+  constructor() {
+    this.profile = document.getElementById(&#x27;profile&#x27;);
+  }
+
+  // Display profile in UI
+  showProfile(user) {
+    this.profile.innerHTML = &#x60;
+      &#x3C;div class=&#x22;card card-body mb-3&#x22;&#x3E;
+        &#x3C;div class=&#x22;row&#x22;&#x3E;
+          &#x3C;div class=&#x22;col-md-3&#x22;&#x3E;
+            &#x3C;img class=&#x22;img-fluid mb-2&#x22; src=&#x22;${user.avatar_url}&#x22;&#x3E;
+            &#x3C;a href=&#x22;${user.html_url}&#x22; target=&#x22;_blank&#x22; class=&#x22;btn btn-primary btn-block mb-4&#x22;&#x3E;View Profile&#x3C;/a&#x3E;
+          &#x3C;/div&#x3E;
+          &#x3C;div class=&#x22;col-md-9&#x22;&#x3E;
+            &#x3C;span class=&#x22;badge badge-primary&#x22;&#x3E;Public Repos: ${user.public_repos}&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;badge badge-secondary&#x22;&#x3E;Public Gists: ${user.public_gists}&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;badge badge-success&#x22;&#x3E;Followers: ${user.followers}&#x3C;/span&#x3E;
+            &#x3C;span class=&#x22;badge badge-info&#x22;&#x3E;Following: ${user.following}&#x3C;/span&#x3E;
+            &#x3C;br&#x3E;&#x3C;br&#x3E;
+            &#x3C;ul class=&#x22;list-group&#x22;&#x3E;
+              &#x3C;li class=&#x22;list-group-item&#x22;&#x3E;Company: ${user.company}&#x3C;/li&#x3E;
+              &#x3C;li class=&#x22;list-group-item&#x22;&#x3E;Website/Blog: ${user.blog}&#x3C;/li&#x3E;
+              &#x3C;li class=&#x22;list-group-item&#x22;&#x3E;Location: ${user.location}&#x3C;/li&#x3E;
+              &#x3C;li class=&#x22;list-group-item&#x22;&#x3E;Member Since: ${user.created_at}&#x3C;/li&#x3E;
+            &#x3C;/ul&#x3E;
+          &#x3C;/div&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;h3 class=&#x22;page-heading mb-3&#x22;&#x3E;Latest Repos&#x3C;/h3&#x3E;
+      &#x3C;div id=&#x22;repos&#x22;&#x3E;&#x3C;/div&#x3E;
+    &#x60;;
+  }
+
+  // Show user repos
+  showRepos(repos) {
+    let output = &#x27;&#x27;;
+    repos.forEach(function(repo){
+      output += 
+      &#x60;&#x3C;div class=&#x22;card card-body mb-2&#x22;&#x3E;
+         &#x3C;div class=&#x22;row&#x22;&#x3E;
+           &#x3C;div class=&#x22;col-md-6&#x22;&#x3E;
+             &#x3C;a href=&#x22;${repo.html_url}&#x22; target=&#x22;_blank&#x22;&#x3E;${repo.name}&#x3C;/a&#x3E;
+           &#x3C;/div&#x3E;
+           &#x3C;div class=&#x22;col-md-6&#x22;&#x3E;
+             &#x3C;span class=&#x22;badge badge-primary&#x22;&#x3E;Stars: ${repo.stargazers_count}&#x3C;/span&#x3E;
+             &#x3C;span class=&#x22;badge badge-secondary&#x22;&#x3E;Watchers: ${repo.watchers_count}&#x3C;/span&#x3E;
+             &#x3C;span class=&#x22;badge badge-success&#x22;&#x3E;Forks: ${repo.forms_count}&#x3C;/span&#x3E;
+           &#x3C;/div&#x3E;
+         &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;&#x60;;
+    });
+
+    // Output repos
+    document.getElementById(&#x27;repos&#x27;).innerHTML = output;
+  }
+
+  // Show alert message
+  showAlert(message, className) {
+    // Clear any remaining alerts
+    this.clearAlert();
+    // Create div
+    const div  =  document.createElement(&#x27;div&#x27;);
+    // Add classes
+    div.className = className;
+    // Add text
+    div.appendChild(document.createTextNode(message));
+    // Get parent
+    const container =  document.querySelector(&#x27;.searchContainer&#x27;);
+    // Get search box
+    const search = document.querySelector(&#x27;.search&#x27;);
+    // Insert alert
+    container.insertBefore(div, search);
+
+    // Timeout after 3 sec
+    setTimeout(() =&#x3E; {
+      this.clearAlert();
+    }, 3000);
+  }
+
+  // Clear alert message
+  clearAlert() {
+    const currentAlert = document.querySelector(&#x27;.alert&#x27;);
+
+    if(currentAlert){
+      currentAlert.remove();
+    }
+  }
+
+  // Clear profile
+  clearProfile() {
+    this.profile.innerHTML = &#x27;&#x27;;
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+  <footer class="mt-5 p-3 text-center bg-light">
+    GitHub Finder &copy;
+  </footer>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="github.js"></script>
+  <script src="uiGH.js"></script>
+  <script src="appGH.js"></script>
+</body>
+</html>

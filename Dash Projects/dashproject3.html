@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<html lang="en">
+<head>
+
+<title>Business Website</title>
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="icon" href="../favicon.png">
+
+<style>
+
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #333333;
+}
+div {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Lobster', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #670045;
+  margin: 60px 0 0 0;
+}
+.h2 {
+  text-align: center;
+  color: rgba(200,200,0,1);
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("https://i.imgur.com/v070BpD.jpg");
+}
+.second{
+  background-image: url("https://i.imgur.com/Rni1ATU.jpg");
+}
+.third{
+  background-image: url("https://i.imgur.com/YVa2BZt.jpg");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  .h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+
+  .backButton {
+      display: inline-block;
+      font-size: 16;
+      text-align: center;
+  }
+}
+
+.sourceCode {
+  color: white;
+}
+
+.codeHeading {
+  font-size: 40px;
+  color: white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Adrian's Player 2</h1>
+<h2 class="h2">Second hand games in good condition.</h2>
+
+<div class="first">
+  <p>Fallout 4 GOTY (PC) <span class="price">$25</span><br />
+  <small>A massive action role-playing game developed by Bethesda Game Studios. It was released in 2015 and contains only singeplayer, it does also have mod support for PC, PS4 and Xbox One. </small></p>
+</div>
+
+<div class="second">
+  <p>Little Big Planet 3 (PS4) <span class="price">$20</span><br />
+  <small>A fun puzzle-platformer developed by Sumo Digital for the PS4. It was released in 2014 and contains both singleplayer and multiplayer.</small></p>
+</div>
+  
+<div class="third">
+  <p>Grand Theft Auto V (PC) <span class="price">$30</span><br />
+  <small>An action-adventure game developed by Rockstar North. It was released in 2013 and contains singleplayer, multiplayer, and mod support.</small></p>
+</div>
+
+<br>
+<br>
+<br>
+
+<h2 class="codeHeading">HTML/JS Code</h2>
+
+<div class="sourceCode">
+  <pre>
+    <code>
+&#x3C;!DOCTYPE html&#x3E;
+
+&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+
+&#x3C;title&#x3E;Business Website&#x3C;/title&#x3E;
+&#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Lobster&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+&#x3C;script src=&#x22;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+
+&#x3C;style&#x3E;
+
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #333333;
+}
+div {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: &#x27;Lobster&#x27;, cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #670045;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: rgba(200,200,0,1);
+  margin: 0px 0 70px 0;
+}
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url(&#x22;https://i.imgur.com/v070BpD.jpg&#x22;);
+}
+.second{
+  background-image: url(&#x22;https://i.imgur.com/Rni1ATU.jpg&#x22;);
+}
+.third{
+  background-image: url(&#x22;https://i.imgur.com/YVa2BZt.jpg&#x22;);
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+
+  .backButton {
+      display: inline-block;
+      font-size: 16;
+      text-align: center;
+  }
+}
+
+&#x3C;/style&#x3E;
+
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+
+&#x3C;h1&#x3E;Adrian&#x27;s Player 2&#x3C;/h1&#x3E;
+&#x3C;h2&#x3E;Second hand games in good condition.&#x3C;/h2&#x3E;
+
+&#x3C;div class=&#x22;first&#x22;&#x3E;
+  &#x3C;p&#x3E;Fallout 4 GOTY (PC) &#x3C;span class=&#x22;price&#x22;&#x3E;$25&#x3C;/span&#x3E;&#x3C;br /&#x3E;
+  &#x3C;small&#x3E;A massive action role-playing game developed by Bethesda Game Studios. 
+  It was released in 2015 and contains only singeplayer, it does also have mod support for PC, PS4 and Xbox One. &#x3C;/small&#x3E;&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;div class=&#x22;second&#x22;&#x3E;
+  &#x3C;p&#x3E;Little Big Planet 3 (PS4) &#x3C;span class=&#x22;price&#x22;&#x3E;$20&#x3C;/span&#x3E;&#x3C;br /&#x3E;
+  &#x3C;small&#x3E;A fun puzzle-platformer developed by Sumo Digital for the PS4. 
+  It was released in 2014 and contains both singleplayer and multiplayer.&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;
+  
+&#x3C;div class=&#x22;third&#x22;&#x3E;
+  &#x3C;p&#x3E;Grand Theft Auto V (PC) &#x3C;span class=&#x22;price&#x22;&#x3E;$30&#x3C;/span&#x3E;&#x3C;br /&#x3E;
+  &#x3C;small&#x3E;An action-adventure game developed by Rockstar North. 
+  It was released in 2013 and contains singleplayer, multiplayer, and mod support.&#x3C;/small&#x3E;&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script&#x3E;
+  $(&#x27;div&#x27;).on(&#x27;click&#x27;, function() {
+      $(this).toggleClass(&#x27;show-description&#x27;);
+  });
+&#x3C;/script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+    </code>
+  </pre>
+</div>
+
+<script>
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
+</html>

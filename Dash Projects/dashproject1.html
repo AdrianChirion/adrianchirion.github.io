@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Personal Website</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans">
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="../favicon.png">
+  
+  <style>
+  
+  /* Styling for the 'About Me' heading. */
+  
+    .aboutHeading {
+      position: absolute;
+      color: #FF5733;
+      font-size: 40px;
+      text-align: center; 
+      background: rgba(0, 0, 0, 0.9);
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      left: 0;
+      top: 50px;
+      max-width: 220px;
+      }  
+    
+    /* This is the style for the background image. */
+    
+    body {
+      background: url("https://i.imgur.com/1ynvxhT.jpg");
+      background-size: cover;
+      background-position: center;
+      color:  white;
+      font-family: constantia;
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+    
+    /* These is all the stying for the nav bar. */
+
+    #navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    }
+
+    #navbar a {
+    color: #FF5733;
+    text-align: center;
+    font-size: 30;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    top: 8px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px black;
+    }
+    
+    #navbar a:hover {
+    background-color: #ddd;
+    color: #daa520; 
+    }
+    
+    #navbar a:active {
+    background-color: #daa520;
+    color: white
+    }
+    
+    /* This is used to make the navbar stick to the top when scrolling */
+
+    .content {
+    padding: 16px;
+    }
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+    }
+
+    .sticky + .content {
+    padding-top: 60px;
+    }
+    
+    /* CSS for the main paragraphs. */
+    
+    p {
+      position: absolute;
+      top: 370px;
+      right: 0;
+      left: 0;
+      font-size: 20px;
+      color: #FF5733;
+      padding: 15px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.9);
+      max-width: 600px;
+    }
+      
+    /* CSS for the image of me. */
+      
+    .profile-photo {
+    height: 200px;
+    padding: 20px;
+    position: relative;
+    top: 115px;
+    bottom: 8;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+    h2 {
+      position: absolute;
+      font-size: 40px;
+      margin-left: 15px;
+      top: 575px;
+    }
+
+    .sourceCode {
+      position: absolute;
+      background-color: #C0C0C0; 
+      padding-left: 15px;
+      padding-right: 205px;
+      color: black;
+      margin-left: 15px;
+      margin-right: 15px;
+      margin-bottom: 15px;
+      top: 690px;
+    }
+    
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div id="navbar">
+  <a tabindex="0">About Me</a>
+  <a tabindex="0">Work</a>
+  <a tabindex="0">Skills</a>
+  <a tabindex="0">Contact Me</a>
+</div>
+
+</header>
+
+<div class="main">
+<h2 class="aboutHeading" tabindex="0"> About Me: </h2>
+
+<img class="profile-photo" src="https://i.imgur.com/6N5041w.gif" alt="picture" tabindex="0"/>
+
+<p tabindex="0">This is the first Dash Assembly project that I did. It required making your own personal website using a little bit of HTML and CSS.
+  Originally this was the starting point of my  own portfolio, you can see some similarities with this about page and the about page on my portfolio.</p>
+</div>
+
+<br>
+<br>
+<br>
+
+<h2>HTML/JS Code</h2>
+
+<div class="sourceCode">
+  <pre>
+    <code>
+      &#x3C;!DOCTYPE html&#x3E;
+&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+
+  &#x3C;title&#x3E;Personal Website&#x3C;/title&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Open+Sans&#x22;&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Merriweather&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Lobster&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+  &#x3C;link href=&#x22;https://fonts.googleapis.com/css?family=Roboto&#x22; rel=&#x22;stylesheet&#x22;&#x3E;
+  &#x3C;script src=&#x22;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+  
+  &#x3C;style&#x3E;
+  
+  /* Styling for the &#x27;About Me&#x27; heading. */
+  
+    .aboutHeading {
+      position: absolute;
+      color: #FF5733;
+      font-size: 40px;
+      text-align: center; 
+      background: rgba(0, 0, 0, 0.9);
+      margin-left: auto;
+      margin-right: auto;
+      right: 0;
+      left: 0;
+      top: 50px;
+      max-width: 220px;
+      }  
+    
+    /* This is the style for the background image. */
+    
+    body {
+      background: url(&#x22;https://i.imgur.com/1ynvxhT.jpg&#x22;);
+      background-size: cover;
+      background-position: center;
+      color:  white;
+      font-family: constantia;
+      margin-left: 0px;
+    }
+    
+    /* These is all the stying for the nav bar. */
+
+    #navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    }
+
+    #navbar a {
+    color: #FF5733;
+    text-align: center;
+    font-size: 30;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    position: relative;
+    top: 8px;
+    border-radius: 10px;
+    border: 2px solid black;
+    box-shadow: 0 4px 8px black;
+    }
+    
+    #navbar a:hover {
+    background-color: #ddd;
+    color: #daa520; 
+    }
+    
+    #navbar a:active {
+    background-color: #daa520;
+    color: white
+    }
+    
+    /* This is used to make the navbar stick to the top when scrolling */
+
+    .content {
+    padding: 16px;
+    }
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%
+    }
+
+    .sticky + .content {
+    padding-top: 60px;
+    }
+    
+    /* CSS for the main paragraphs. */
+    
+    p {
+      position: absolute;
+      top: 370px;
+      right: 0;
+      left: 0;
+      font-size: 20px;
+      color: #FF5733;
+      padding: 15px;
+      margin: 0 auto;
+      background: rgba(0, 0, 0, 0.9);
+      max-width: 600px;
+    }
+      
+    /* CSS for the image of me. */
+      
+    .profile-photo {
+    height: 200px;
+    padding: 20px;
+    position: relative;
+    top: 115px;
+    bottom: 8;
+    z-index: -1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    }
+    
+&#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+
+&#x3C;header&#x3E;
+
+&#x3C;div id=&#x22;navbar&#x22;&#x3E;
+  &#x3C;a tabindex=&#x22;0&#x22;&#x3E;About Me&#x3C;/a&#x3E;
+  &#x3C;a tabindex=&#x22;0&#x22;&#x3E;Work&#x3C;/a&#x3E;
+  &#x3C;a tabindex=&#x22;0&#x22;&#x3E;Skills&#x3C;/a&#x3E;
+  &#x3C;a tabindex=&#x22;0&#x22;&#x3E;Contact Me&#x3C;/a&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;/header&#x3E;
+
+&#x3C;div class=&#x22;main&#x22;&#x3E;
+&#x3C;h2 class=&#x22;aboutHeading&#x22; tabindex=&#x22;0&#x22;&#x3E; About Me: &#x3C;/h2&#x3E;
+
+&#x3C;img class=&#x22;profile-photo&#x22; src=&#x22;https://i.imgur.com/6N5041w.gif&#x22; alt=&#x22;picture&#x22; tabindex=&#x22;0&#x22;/&#x3E;
+
+&#x3C;p tabindex=&#x22;0&#x22;&#x3E;This is the first Dash Assembly project that I did. It required making your own personal website using a little bit of HTML and CSS.
+  Originally this was the starting point of my  own portfolio, you can see some similarities with this about page and the about page on my portfolio.&#x3C;/p&#x3E;
+&#x3C;/div&#x3E;
+
+&#x3C;script&#x3E;
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById(&#x22;navbar&#x22;);
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove &#x22;sticky&#x22; when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset &#x3E;= sticky) {
+    navbar.classList.add(&#x22;sticky&#x22;)
+  } else {
+    navbar.classList.remove(&#x22;sticky&#x22;);
+  }
+}
+&#x3C;/script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+    </code>
+  </pre>
+</div>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>

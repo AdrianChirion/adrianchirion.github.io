@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <link rel="icon" href="../favicon.png">
+  <title>Book List</title>
+
+  <style>
+    .success, .error {
+      color: white;
+      padding: 5px;
+      margin: 5px 0 15px 0;
+    }
+
+    .success {
+      background: green;
+    }
+
+    .error {
+      background: red;
+    }
+
+    code {
+      background-color: #C0C0C0; 
+    } 
+
+    h2 {
+      font-size: 40px;
+    }
+  </style>
+  
+</head>
+<body>
+  <div class="container">
+    <h1>Add Book</h1>
+    <form id="book-form">
+      <div>
+        <label for="title">Title</label>
+        <input type="text" id="title" class="u-full-width">
+      </div>
+      <div>
+        <label for="author">Author</label>
+        <input type="text" id="author" class="u-full-width">
+      </div>
+      <div>
+        <label for="isbn">ISBN#</label>
+        <input type="text" id="isbn" class="u-full-width">
+      </div>
+      <div>
+        <input type="submit" value="Submit" class="u-full-width">
+      </div>
+    </form>
+    <table class="u-full-width">
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list"></tbody>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <br> 
+
+  <h2>HTML Code</h2>
+  <div>
+    <pre>
+      <code>
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;ie=edge&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css&#x22; /&#x3E;
+  &#x3C;style&#x3E;
+    .success, .error {
+      color: white;
+      padding: 5px;
+      margin: 5px 0 15px 0;
+    }
+
+    .success {
+      background: green;
+    }
+
+    .error {
+      background: red;
+    }
+  &#x3C;/style&#x3E;
+  &#x3C;title&#x3E;Book List&#x3C;/title&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;div class=&#x22;container&#x22;&#x3E;
+    &#x3C;h1&#x3E;Add Book&#x3C;/h1&#x3E;
+    &#x3C;form id=&#x22;book-form&#x22;&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;label for=&#x22;title&#x22;&#x3E;Title&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;text&#x22; id=&#x22;title&#x22; class=&#x22;u-full-width&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;label for=&#x22;author&#x22;&#x3E;Author&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;text&#x22; id=&#x22;author&#x22; class=&#x22;u-full-width&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;label for=&#x22;isbn&#x22;&#x3E;ISBN#&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;text&#x22; id=&#x22;isbn&#x22; class=&#x22;u-full-width&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;input type=&#x22;submit&#x22; value=&#x22;Submit&#x22; class=&#x22;u-full-width&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/form&#x3E;
+    &#x3C;table class=&#x22;u-full-width&#x22;&#x3E;
+      &#x3C;thead&#x3E;
+        &#x3C;tr&#x3E;
+          &#x3C;th&#x3E;Title&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;Author&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;ISBN&#x3C;/th&#x3E;
+          &#x3C;th&#x3E;&#x3C;/th&#x3E;
+        &#x3C;/tr&#x3E;
+      &#x3C;/thead&#x3E;
+      &#x3C;tbody id=&#x22;book-list&#x22;&#x3E;&#x3C;/tbody&#x3E;
+    &#x3C;/table&#x3E;
+  &#x3C;/div&#x3E;
+
+  &#x3C;script src=&#x22;appES5.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code ES5</h2>
+
+  <div>
+    <pre>
+      <code>
+// Book Constructor
+function Book(title, author, isbn) {
+  this.title = title;
+  this.author = author;
+  this.isbn = isbn;
+}
+
+// UI Constructor
+function UI() {}
+
+// Add Book To List
+UI.prototype.addBookToList = function(book){
+  const list = document.getElementById(&#x27;book-list&#x27;);
+  // Create tr element
+  const row = document.createElement(&#x27;tr&#x27;);
+  // Insert cols
+  row.innerHTML = &#x60;
+    &#x3C;td&#x3E;${book.title}&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;${book.author}&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;${book.isbn}&#x3C;/td&#x3E;
+    &#x3C;td&#x3E;&#x3C;a href=&#x22;#&#x22; class=&#x22;delete&#x22;&#x3E;X&#x3C;a&#x3E;&#x3C;/td&#x3E;
+  &#x60;;
+
+  list.appendChild(row);
+}
+
+// Show Alert
+UI.prototype.showAlert = function(message, className) {
+  // Create div
+  const div = document.createElement(&#x27;div&#x27;);
+  // Add classes
+  div.className = &#x60;alert ${className}&#x60;;
+  // Add text
+  div.appendChild(document.createTextNode(message));
+  // Get parent
+  const container = document.querySelector(&#x27;.container&#x27;);
+  // Get form
+  const form = document.querySelector(&#x27;#book-form&#x27;);
+  // Insert alert
+  container.insertBefore(div, form);
+
+  // Timeout after 3 sec
+  setTimeout(function(){
+    document.querySelector(&#x27;.alert&#x27;).remove();
+  }, 3000);
+}
+
+// Delete Book
+UI.prototype.deleteBook = function(target){
+  if(target.className === &#x27;delete&#x27;) {
+    target.parentElement.parentElement.remove();
+  }
+}
+
+// Clear Fields
+UI.prototype.clearFields = function() {
+  document.getElementById(&#x27;title&#x27;).value = &#x27;&#x27;;
+  document.getElementById(&#x27;author&#x27;).value = &#x27;&#x27;;
+  document.getElementById(&#x27;isbn&#x27;).value = &#x27;&#x27;;
+}
+
+// Event Listener for add book
+document.getElementById(&#x27;book-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e){
+  // Get form values
+  const title = document.getElementById(&#x27;title&#x27;).value,
+        author = document.getElementById(&#x27;author&#x27;).value,
+        isbn = document.getElementById(&#x27;isbn&#x27;).value
+
+  // Instantiate book
+  const book = new Book(title, author, isbn);
+
+  // Instantiate UI
+  const ui = new UI();
+
+  // Validate
+  if(title === &#x27;&#x27; || author === &#x27;&#x27; || isbn === &#x27;&#x27;) {
+    // Error alert
+    ui.showAlert(&#x27;Please fill in all fields&#x27;, &#x27;error&#x27;);
+  } else {
+    // Add book to list
+    ui.addBookToList(book);
+
+    // Show success
+    ui.showAlert(&#x27;Book Added!&#x27;, &#x27;success&#x27;);
+  
+    // Clear fields
+    ui.clearFields();
+  }
+
+  e.preventDefault();
+});
+
+// Event Listener for delete
+document.getElementById(&#x27;book-list&#x27;).addEventListener(&#x27;click&#x27;, function(e){
+
+  // Instantiate UI
+  const ui = new UI();
+
+  // Delete book
+  ui.deleteBook(e.target);
+
+  // Show message
+  ui.showAlert(&#x27;Book Removed!&#x27;, &#x27;success&#x27;);
+
+  e.preventDefault();
+});
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code ES6</h2>
+
+  <div>
+    <pre>
+      <code>
+  class Book {
+  constructor(title, author, isbn) {
+    this.title = title;
+    this.author = author;
+    this.isbn = isbn;
+  }
+}
+
+class UI {
+  addBookToList(book) {
+    const list = document.getElementById(&#x27;book-list&#x27;);
+    // Create tr element
+    const row = document.createElement(&#x27;tr&#x27;);
+    // Insert cols
+    row.innerHTML = &#x60;
+      &#x3C;td&#x3E;${book.title}&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;${book.author}&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;${book.isbn}&#x3C;/td&#x3E;
+      &#x3C;td&#x3E;&#x3C;a href=&#x22;#&#x22; class=&#x22;delete&#x22;&#x3E;X&#x3C;a&#x3E;&#x3C;/td&#x3E;
+    &#x60;;
+  
+    list.appendChild(row);
+  }
+
+  showAlert(message, className) {
+    // Create div
+    const div = document.createElement(&#x27;div&#x27;);
+    // Add classes
+    div.className = &#x60;alert ${className}&#x60;;
+    // Add text
+    div.appendChild(document.createTextNode(message));
+    // Get parent
+    const container = document.querySelector(&#x27;.container&#x27;);
+    // Get form
+    const form = document.querySelector(&#x27;#book-form&#x27;);
+    // Insert alert
+    container.insertBefore(div, form);
+
+    // Timeout after 3 sec
+    setTimeout(function(){
+      document.querySelector(&#x27;.alert&#x27;).remove();
+    }, 3000);
+  }
+
+  deleteBook(target) {
+    if(target.className === &#x27;delete&#x27;) {
+      target.parentElement.parentElement.remove();
+    }
+  }
+
+  clearFields() {
+    document.getElementById(&#x27;title&#x27;).value = &#x27;&#x27;;
+    document.getElementById(&#x27;author&#x27;).value = &#x27;&#x27;;
+    document.getElementById(&#x27;isbn&#x27;).value = &#x27;&#x27;;
+  }
+}
+
+// Local Storage Class
+class Store {
+  static getBooks() {
+    let books;
+    if(localStorage.getItem(&#x27;books&#x27;) === null) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem(&#x27;books&#x27;));
+    }
+
+    return books;
+  }
+
+  static displayBooks() {
+    const books = Store.getBooks();
+
+    books.forEach(function(book){
+      const ui  = new UI;
+
+      // Add book to UI
+      ui.addBookToList(book);
+    });
+  }
+
+  static addBook(book) {
+    const books = Store.getBooks();
+
+    books.push(book);
+
+    localStorage.setItem(&#x27;books&#x27;, JSON.stringify(books));
+  }
+
+  static removeBook(isbn) {
+    const books = Store.getBooks();
+
+    books.forEach(function(book, index){
+     if(book.isbn === isbn) {
+      books.splice(index, 1);
+     }
+    });
+
+    localStorage.setItem(&#x27;books&#x27;, JSON.stringify(books));
+  }
+}
+
+// DOM Load Event
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, Store.displayBooks);
+
+// Event Listener for add book
+document.getElementById(&#x27;book-form&#x27;).addEventListener(&#x27;submit&#x27;, function(e){
+  // Get form values
+  const title = document.getElementById(&#x27;title&#x27;).value,
+        author = document.getElementById(&#x27;author&#x27;).value,
+        isbn = document.getElementById(&#x27;isbn&#x27;).value
+
+  // Instantiate book
+  const book = new Book(title, author, isbn);
+
+  // Instantiate UI
+  const ui = new UI();
+
+  console.log(ui);
+
+  // Validate
+  if(title === &#x27;&#x27; || author === &#x27;&#x27; || isbn === &#x27;&#x27;) {
+    // Error alert
+    ui.showAlert(&#x27;Please fill in all fields&#x27;, &#x27;error&#x27;);
+  } else {
+    // Add book to list
+    ui.addBookToList(book);
+
+    // Add to LS
+    Store.addBook(book);
+
+    // Show success
+    ui.showAlert(&#x27;Book Added!&#x27;, &#x27;success&#x27;);
+  
+    // Clear fields
+    ui.clearFields();
+  }
+
+  e.preventDefault();
+});
+
+// Event Listener for delete
+document.getElementById(&#x27;book-list&#x27;).addEventListener(&#x27;click&#x27;, function(e){
+
+  // Instantiate UI
+  const ui = new UI();
+
+  // Delete book
+  ui.deleteBook(e.target);
+
+  // Remove from LS
+  Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
+
+  // Show message
+  ui.showAlert(&#x27;Book Removed!&#x27;, &#x27;success&#x27;);
+
+  e.preventDefault();
+});
+      </code>
+    </pre>
+  </div>
+
+  <script src="appES5.js" async></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+<title>Madlibs Game</title>
+<link href='https://fonts.googleapis.com/css?family=Fjalla+One'>
+<link href='https://fonts.googleapis.com/css?family=Shadows+Into+Light' rel='stylesheet' type='text/css'>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="icon" href="../favicon.png">
+
+<style>
+.main {
+  text-align: center;
+  font-family: 'Fjalla One';
+  font-size: 30px;
+  background: #e6eaf0;
+  padding-top: 50px;
+  height: 200px;
+}
+button {
+  margin: 40px;
+}
+input {
+  font-size: 24px;
+}
+.fill {
+  background: white;
+  color: red;
+  border-bottom: 2px black solid;
+  font-family: 'Shadows Into Light';
+  margin: 4px;
+  padding: 0 6px;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+.sourceCode {
+  background-color: #C0C0C0; 
+  padding-left: 15px;
+} 
+</style>
+</head>
+
+<body>
+
+<div class="main">
+<div class="prompt"></div>
+<button>Next</button>
+</div>
+
+<h2>HTML/JS Code</h2>
+
+<div class="sourceCode">
+  <pre>
+    <code>
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+
+&#x3C;title&#x3E;Madlibs Game&#x3C;/title&#x3E;
+&#x3C;link href=&#x27;https://fonts.googleapis.com/css?family=Fjalla+One&#x27;&#x3E;
+&#x3C;link href=&#x27;https://fonts.googleapis.com/css?family=Shadows+Into+Light&#x27; rel=&#x27;stylesheet&#x27; type=&#x27;text/css&#x27;&#x3E;
+&#x3C;script src=&#x22;https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;link rel=&#x22;icon&#x22; href=&#x22;../favicon.png&#x22;&#x3E;
+
+&#x3C;style&#x3E;
+.main {
+  text-align: center;
+  font-family: &#x27;Fjalla One&#x27;;
+  font-size: 30px;
+  background: #e6eaf0;
+  padding-top: 50px;
+  height: 200px;    
+}
+button {
+  margin: 40px;
+}
+input {
+  font-size: 24px;
+}
+.fill {
+  background: white;
+  color: red;
+  border-bottom: 2px black solid;
+  font-family: &#x27;Shadows Into Light&#x27;;
+  margin: 4px;
+  padding: 0 6px;
+}
+&#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+
+&#x3C;body&#x3E;
+
+&#x3C;div class=&#x22;prompt&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;button&#x3E;Next&#x3C;/button&#x3E;
+
+&#x3C;script&#x3E;
+// List of prompts for the user
+var prompts = [
+&#x9;&#x27;Type your name&#x27;,
+&#x9;&#x27;Type an adjective&#x27;,
+&#x9;&#x27;Type a noun&#x27;
+   ];
+
+var answers=[];
+// Keep track of current prompt we&#x27;re on
+var currentPrompt = 0;
+
+// A function that will call the next prompt
+var nextPrompt = function() {
+  //if there&#x27;s no answer in the form
+  if (currentPrompt != 0){
+    answers.push($(&#x27;input&#x27;).val());
+  }
+&#x9;// if there is a next prompt
+&#x9;if (currentPrompt &#x3C; prompts.length) {
+&#x9;&#x9;// put first prompt in all html elements with class 
+&#x9;&#x9;$(&#x27;.prompt&#x27;).html(prompts[currentPrompt] +&#x27;&#x3C;br&#x3E;&#x3C;input type=&#x22;text&#x22; label=&#x22;input&#x22;&#x3E;&#x27;);
+&#x9;&#x9;// move the next prompt into variable currentPrompt 
+&#x9;&#x9;currentPrompt = currentPrompt + 1;
+&#x9;}
+&#x9;//or else if we&#x27;re at the end of the array
+&#x9;else {
+&#x9;&#x9;// put a new message into the html.
+&#x9;&#x9;showFinal();
+&#x9;}
+}
+
+//puts user answers into HTML
+var showFinal = function() {
+  $(&#x27;.prompt&#x27;).html(&#x27;This is the story of &#x3C;span class=&#x22;fill&#x22;&#x3E;&#x27;+answers[0]+&#x27;&#x3C;/span&#x3E; and the &#x3C;span class=&#x22;fill&#x22;&#x3E;&#x27;+answers[1]+&#x27;&#x3C;/span&#x3E; &#x3C;span class=&#x22;fill&#x22;&#x3E;&#x27;+answers[2]+&#x27;&#x3C;/span&#x3E;.&#x27;);
+  // hide the button
+  $(&#x27;button&#x27;).hide();
+}
+// run nextPrompt function when button is clicked
+$(&#x27;button&#x27;).click(function() {
+&#x9;nextPrompt();
+});
+
+// Show the first prompt as soon as js loads
+nextPrompt();
+&#x3C;/script&#x3E;
+
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+    </code>
+  </pre>
+</div>
+
+<script>
+// List of prompts for the user
+var prompts = [
+	'Type your name',
+	'Type an adjective',
+	'Type a noun'
+   ];
+
+var answers=[];
+// Keep track of current prompt we're on
+var currentPrompt = 0;
+
+// A function that will call the next prompt
+var nextPrompt = function() {
+  //if there's no answer in the form
+  if (currentPrompt != 0){
+    answers.push($('input').val());
+  }
+	// if there is a next prompt
+	if (currentPrompt < prompts.length) {
+		// put first prompt in all html elements with class 
+		$('.prompt').html(prompts[currentPrompt] +'<br><input type="text" label="input">');
+		// move the next prompt into variable currentPrompt 
+		currentPrompt = currentPrompt + 1;
+	}
+	//or else if we're at the end of the array
+	else {
+		// put a new message into the html.
+		showFinal();
+	}
+}
+
+//puts user answers into HTML
+var showFinal = function() {
+  $('.prompt').html('This is the story of <span class="fill">'+answers[0]+'</span> and the <span class="fill">'+answers[1]+'</span> <span class="fill">'+answers[2]+'</span>.');
+  // hide the button
+  $('button').hide();
+}
+// run nextPrompt function when button is clicked
+$('button').click(function() {
+	nextPrompt();
+});
+
+// Show the first prompt as soon as js loads
+nextPrompt();
+</script>
+
+</body>
+</html>

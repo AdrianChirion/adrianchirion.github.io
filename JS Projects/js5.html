@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" />
+  <link rel="icon" href="../favicon.png">
+  <title>Chuck Norris Joke Generator</title>
+
+  <style>
+    body {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+    #loading, #results {
+      display: none;
+    }
+
+    h2 {
+      color: black;
+      font-size: 40px;
+    }
+
+    .sourceCode {
+      background-color: #C0C0C0; 
+      padding-left: 15px;
+    }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <h2>Chuck Norris Joke Generator</h2>
+    <form>
+      <div>
+        <label for="number">Number of jokes</label>
+        <input type="number" id="number">
+      </div>
+      <div>
+        <button class="get-jokes">Get Jokes</button>
+      </div>
+    </form>
+    <ul class="jokes"></ul>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>HTML Code</h2>
+
+  <div>
+    <pre>
+      <code class="sourceCode">
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;ie=edge&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css&#x22; /&#x3E;
+  &#x3C;title&#x3E;Chuck Norris Joke Generator&#x3C;/title&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;div class=&#x22;container&#x22;&#x3E;
+    &#x3C;h2&#x3E;Chuck Norris Joke Generator&#x3C;/h2&#x3E;
+    &#x3C;form&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;label for=&#x22;number&#x22;&#x3E;Number of jokes&#x3C;/label&#x3E;
+        &#x3C;input type=&#x22;number&#x22; id=&#x22;number&#x22;&#x3E;
+      &#x3C;/div&#x3E;
+      &#x3C;div&#x3E;
+        &#x3C;button class=&#x22;get-jokes&#x22;&#x3E;Get Jokes&#x3C;/button&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/form&#x3E;
+    &#x3C;ul class=&#x22;jokes&#x22;&#x3E;&#x3C;/ul&#x3E;
+  &#x3C;/div&#x3E;
+
+  &#x3C;script src=&#x22;../JS/generator.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code</h2>
+
+  <div>
+    <pre>
+      <code class="sourceCode">
+        document.querySelector(&#x27;.get-jokes&#x27;).addEventListener(&#x27;click&#x27;, getJokes);
+
+function getJokes(e) {
+  const number = document.querySelector(&#x27;input[type=&#x22;number&#x22;]&#x27;).value;
+
+  const xhr = new XMLHttpRequest();
+
+  xhr.open(&#x27;GET&#x27;, &#x60;http://api.icndb.com/jokes/random/${number}&#x60;, true);
+
+  xhr.onload = function() {
+    if(this.status === 200) {
+      const response = JSON.parse(this.responseText);
+      
+      let output = &#x27;&#x27;;
+
+      if(response.type === &#x27;success&#x27;) {
+        response.value.forEach(function(joke){
+          output += &#x60;&#x3C;li&#x3E;${joke.joke}&#x3C;/li&#x3E;&#x60;;
+        });
+      } else {
+        output += &#x27;&#x3C;li&#x3E;Something went wrong&#x3C;/li&#x3E;&#x27;;
+      }
+
+      document.querySelector(&#x27;.jokes&#x27;).innerHTML = output;
+    }
+  }
+
+  xhr.send();
+
+  e.preventDefault();
+}
+      </code>
+    </pre>
+  </div>
+
+  <script src="generator.js"></script>
+</body>
+</html>

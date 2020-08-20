@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://bootswatch.com/4/cerulean/bootstrap.min.css">
+  <link rel="icon" href="../favicon.png">
+  <title>WeatherJS</title>
+
+  <style>
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #loading, #results {
+        display: none;
+      }
+
+      h2 {
+        color: black;
+        font-size: 40px;
+      }
+
+      .sourceCode {
+        background-color: #C0C0C0; 
+        padding-left: 15px;
+      }
+  </style>
+
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded">
+        <h1 id="w-location"></h1>
+        <h3 class="text-dark" id="w-desc"></h3>
+        <h3 id="w-string"></h3>
+        <img id="w-icon">
+        <ul id="w-details" class="list-group mt-3">
+          <li class="list-group-item" id="w-humidity"></li>
+          <li class="list-group-item" id="w-dewpoint"></li>
+          <li class="list-group-item" id="w-feels-like"></li>
+          <li class="list-group-item" id="w-wind"></li>
+        </ul>
+        <hr>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#locModal">
+            Change Location
+          </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+<div class="modal fade" id="locModal" tabindex="-1" role="dialog" aria-labelledby="locModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="locModalLabel">Choose Location</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="w-form">
+            <div class="form-group">
+              <label for="city">City</label>
+              <input type="text" id="city" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control">
+              </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button id="w-change-btn" type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <h2>HTML Code</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html lang=&#x22;en&#x22;&#x3E;
+&#x3C;head&#x3E;
+  &#x3C;meta charset=&#x22;UTF-8&#x22;&#x3E;
+  &#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1.0&#x22;&#x3E;
+  &#x3C;meta http-equiv=&#x22;X-UA-Compatible&#x22; content=&#x22;ie=edge&#x22;&#x3E;
+  &#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;https://bootswatch.com/4/cerulean/bootstrap.min.css&#x22;&#x3E;
+  &#x3C;title&#x3E;WeatherJS&#x3C;/title&#x3E;
+
+  &#x3C;style&#x3E;
+      body {
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+
+      #loading, #results {
+        display: none;
+      }
+
+      h2 {
+        color: black;
+        font-size: 40px;
+      }
+
+      .sourceCode {
+        background-color: #C0C0C0; 
+        padding-left: 15px;
+      }
+    &#x3C;/style&#x3E;
+
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+  &#x3C;div class=&#x22;container&#x22;&#x3E;
+    &#x3C;div class=&#x22;row&#x22;&#x3E;
+      &#x3C;div class=&#x22;col-md-6 mx-auto text-center bg-primary mt-5 p-5 rounded&#x22;&#x3E;
+        &#x3C;h1 id=&#x22;w-location&#x22;&#x3E;&#x3C;/h1&#x3E;
+        &#x3C;h3 class=&#x22;text-dark&#x22; id=&#x22;w-desc&#x22;&#x3E;&#x3C;/h3&#x3E;
+        &#x3C;h3 id=&#x22;w-string&#x22;&#x3E;&#x3C;/h3&#x3E;
+        &#x3C;img id=&#x22;w-icon&#x22;&#x3E;
+        &#x3C;ul id=&#x22;w-details&#x22; class=&#x22;list-group mt-3&#x22;&#x3E;
+          &#x3C;li class=&#x22;list-group-item&#x22; id=&#x22;w-humidity&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li class=&#x22;list-group-item&#x22; id=&#x22;w-dewpoint&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li class=&#x22;list-group-item&#x22; id=&#x22;w-feels-like&#x22;&#x3E;&#x3C;/li&#x3E;
+          &#x3C;li class=&#x22;list-group-item&#x22; id=&#x22;w-wind&#x22;&#x3E;&#x3C;/li&#x3E;
+        &#x3C;/ul&#x3E;
+        &#x3C;hr&#x3E;
+        &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-primary&#x22; data-toggle=&#x22;modal&#x22; data-target=&#x22;#locModal&#x22;&#x3E;
+            Change Location
+          &#x3C;/button&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+
+  &#x3C;!-- Modal --&#x3E;
+&#x3C;div class=&#x22;modal fade&#x22; id=&#x22;locModal&#x22; tabindex=&#x22;-1&#x22; role=&#x22;dialog&#x22; aria-labelledby=&#x22;locModalLabel&#x22; aria-hidden=&#x22;true&#x22;&#x3E;
+    &#x3C;div class=&#x22;modal-dialog&#x22; role=&#x22;document&#x22;&#x3E;
+      &#x3C;div class=&#x22;modal-content&#x22;&#x3E;
+        &#x3C;div class=&#x22;modal-header&#x22;&#x3E;
+          &#x3C;h5 class=&#x22;modal-title&#x22; id=&#x22;locModalLabel&#x22;&#x3E;Choose Location&#x3C;/h5&#x3E;
+          &#x3C;button type=&#x22;button&#x22; class=&#x22;close&#x22; data-dismiss=&#x22;modal&#x22; aria-label=&#x22;Close&#x22;&#x3E;
+            &#x3C;span aria-hidden=&#x22;true&#x22;&#x3E;&#x26;times;&#x3C;/span&#x3E;
+          &#x3C;/button&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;modal-body&#x22;&#x3E;
+          &#x3C;form id=&#x22;w-form&#x22;&#x3E;
+            &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+              &#x3C;label for=&#x22;city&#x22;&#x3E;City&#x3C;/label&#x3E;
+              &#x3C;input type=&#x22;text&#x22; id=&#x22;city&#x22; class=&#x22;form-control&#x22;&#x3E;
+            &#x3C;/div&#x3E;
+            &#x3C;div class=&#x22;form-group&#x22;&#x3E;
+                &#x3C;label for=&#x22;state&#x22;&#x3E;State&#x3C;/label&#x3E;
+                &#x3C;input type=&#x22;text&#x22; id=&#x22;state&#x22; class=&#x22;form-control&#x22;&#x3E;
+              &#x3C;/div&#x3E;
+          &#x3C;/form&#x3E;
+        &#x3C;/div&#x3E;
+        &#x3C;div class=&#x22;modal-footer&#x22;&#x3E;
+          &#x3C;button type=&#x22;button&#x22; class=&#x22;btn btn-secondary&#x22; data-dismiss=&#x22;modal&#x22;&#x3E;Close&#x3C;/button&#x3E;
+          &#x3C;button id=&#x22;w-change-btn&#x22; type=&#x22;button&#x22; class=&#x22;btn btn-primary&#x22;&#x3E;Save changes&#x3C;/button&#x3E;
+        &#x3C;/div&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+
+&#x3C;script src=&#x22;https://code.jquery.com/jquery-3.2.1.slim.min.js&#x22; 
+integrity=&#x22;sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js&#x22; 
+integrity=&#x22;sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js&#x22; 
+integrity=&#x22;sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ&#x22; crossorigin=&#x22;anonymous&#x22;&#x3E;&#x3C;/script&#x3E;
+
+  &#x3C;script src=&#x22;../JS/Weather JS/storage.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;../JS/Weather JS/weather.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;../JS/Weather JS/ui.js&#x22;&#x3E;&#x3C;/script&#x3E;
+  &#x3C;script src=&#x22;../JS/Weather JS/app.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+&#x3C;/html&#x3E;
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code: app.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+// Init storage
+const storage = new Storage();
+// Get stored location data
+const weatherLocation = storage.getLocationData();
+// Init weather object
+const weather = new Weather(weatherLocation.city, weatherLocation.state);
+// Init UI
+const ui = new UI();
+
+// Get weather on DOM load
+document.addEventListener(&#x27;DOMContentLoaded&#x27;, getWeather);
+
+// Change location event
+document.getElementById(&#x27;w-change-btn&#x27;).addEventListener(&#x27;click&#x27;, (e) =&#x3E; {
+  const city = document.getElementById(&#x27;city&#x27;).value;
+  const state = document.getElementById(&#x27;state&#x27;).value;
+
+  // Change location
+  weather.changeLocation(city, state);
+
+  // Set location in LS
+  storage.setLocationData(city, state);
+
+  // Get and display weather
+  getWeather();
+
+  // Close modal
+  $(&#x27;#locModal&#x27;).modal(&#x27;hide&#x27;);
+});
+
+function getWeather(){
+  weather.getWeather()
+    .then(results =&#x3E; {
+      ui.paint(results);
+    })
+    .catch(err =&#x3E; console.log(err));
+}
+      </code>
+    </pre>
+  </div>
+  
+  <h2>Java Script Code: storage.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+  class Storage {
+  constructor() {
+    this.city;
+    this.state;
+    this.defaultCity = &#x27;Miami&#x27;;
+    this.defaultState = &#x27;FL&#x27;;
+  }
+
+  getLocationData() {
+    if(localStorage.getItem(&#x27;city&#x27;) === null) {
+      this.city = this.defaultCity;
+    } else {
+      this.city = localStorage.getItem(&#x27;city&#x27;);
+    }
+
+    if(localStorage.getItem(&#x27;state&#x27;) === null) {
+      this.state = this.defaultState;
+    } else {
+      this.state = localStorage.getItem(&#x27;state&#x27;);
+    }
+
+    return {
+      city: this.city,
+      state: this.state
+    }
+  }
+
+  setLocationData(city, state) {
+    localStorage.setItem(&#x27;city&#x27;, city);
+    localStorage.setItem(&#x27;state&#x27;, state);
+  }
+}
+      </code>
+    </pre>
+  </div>
+    
+  <h2>Java Script Code: ui.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+  class UI {
+  constructor() {
+    this.location = document.getElementById(&#x27;w-location&#x27;);
+    this.desc = document.getElementById(&#x27;w-desc&#x27;);
+    this.string = document.getElementById(&#x27;w-string&#x27;);
+    this.details = document.getElementById(&#x27;w-details&#x27;);
+    this.icon = document.getElementById(&#x27;w-icon&#x27;);
+    this.humidity = document.getElementById(&#x27;w-humidity&#x27;);
+    this.feelsLike = document.getElementById(&#x27;w-feels-like&#x27;);
+    this.dewpoint= document.getElementById(&#x27;w-dewpoint&#x27;);
+    this.wind = document.getElementById(&#x27;w-wind&#x27;);
+  }
+
+  paint(weather) {
+    this.location.textContent = weather.display_location.full;
+    this.desc.textContent = weather.weather;
+    this.string.textContent = weather.temperature_string;
+    this.icon.setAttribute(&#x27;src&#x27;, weather.icon_url);
+    this.humidity.textContent = &#x60;Relative Humidity: ${weather.relative_humidity}&#x60;;
+    this.feelsLike.textContent = &#x60;Feels Like: ${weather.feelslike_string}&#x60;;
+    this.dewpoint.textContent = &#x60;DewPoint: ${weather.dewpoint_string}&#x60;;
+    this.wind.textContent = &#x60;Wind: ${weather.wind_string}&#x60;;
+  }
+}
+      </code>
+    </pre>
+  </div>
+
+  <h2>Java Script Code: weather.js</h2>
+
+  <div class="sourceCode">
+    <pre>
+      <code>
+  class Weather {
+  constructor(city, state) {
+    this.apiKey = &#x27;99dfe35fcb7de1ee&#x27;;
+    this.city = city;
+    this.state = state;
+  }
+
+  // Fetch weather from API
+  async getWeather() {
+    const response = await fetch(&#x60;http://api.wunderground.com/api/${this.apiKey}/conditions/q/${this.state}/${this.city}.json&#x60;);
+
+    const responseData = await response.json();
+
+    return responseData.current_observation;
+  }
+
+  // Change weather location
+  changeLocation(city, state) {
+    this.city = city;
+    this.state = state;
+  }
+}
+      </code>
+    </pre>
+  </div>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  <script src="storage.js"></script>
+  <script src="weather.js"></script>
+  <script src="ui.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
