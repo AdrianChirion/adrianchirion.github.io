@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--The main links/containers of the Navbar-->
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<!--Main content-->
+<div class="main">
+<div class="headerContainer">
+  <h1 class="mainHeaders" tabindex="0">Overview:</h1>
+</div>
+
+<!--Main paragraph-->
+<p class="mainParagraphs" tabindex="0">This was one of the first practice exercises I did for Cypress. The webpage itself is meant for using Test Cafe, however it works just as well with Cypress.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">Test Execution:</h2>
+</div>
+
+<!--First video-->
+<div class="headerContainer">
+  <iframe class='embeddedVideo' width="896" height="504" src="https://www.youtube.com/embed/sHVArty1UHg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--First code block-->
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">My Cypress Code:</h2>
+</div>
+
+<div class='sourceCode'>
+  <pre>
+    <code>
+      describe(&#x27;TestCafe Elements Spec&#x27;, function() {
+        it(&#x27;Interacts with various elements on the TestCafe Example page&#x27;, function() {
+            cy.visit(&#x27;https://devexpress.github.io/testcafe/example/&#x27;)
+           
+            //Gets the developer name input and types my name
+            cy.get(&#x27;#developer-name&#x27;).type(&#x27;Adrian&#x27;)
+    
+            //Gets and clicks the radio button for Windows
+            cy.get(&#x27;:nth-child(1) &#x3E; :nth-child(2) &#x3E; label&#x27;).click()
+    
+            //Gets and clicks the parallel testing checkbox
+            cy.get(&#x27;#background-parallel-testing&#x27;).click()
+    
+            //Gets and clicks the continuous integration checkbox
+            cy.get(&#x27;#continuous-integration-embedding&#x27;).click()
+    
+            //Chooses a value from the dropdown box
+            cy.get(&#x27;#preferred-interface&#x27;).select(&#x27;Both&#x27;)
+    
+            //Checks that the slider is disabled on the UI
+            cy.get(&#x27;div[id=&#x22;slider&#x22;]&#x27;).should(&#x27;have.class&#x27;, &#x27;ui-state-disabled&#x27;)
+    
+            //Clicks the Test Cafe checkbox
+            cy.get(&#x27;#tried-test-cafe&#x27;).click()
+    
+            //Checks that the slider is now enabled on the UI
+            cy.get(&#x27;div[id=&#x22;slider&#x22;]&#x27;).should(&#x27;not.have.class&#x27;, &#x27;ui-state-disabled&#x27;)
+    
+            //Gets and clicks the slider handle and drags it to the 6th position
+            cy.get(&#x27;.ui-slider-handle&#x27;).trigger(&#x27;mousedown&#x27;, { which: 1 }) .trigger(&#x27;mousemove&#x27;, { clientX: 400, clientY: 500 })
+    
+            //Checks that the comment box is empty
+            cy.get(&#x27;#comments&#x27;).should(&#x27;not.have.value&#x27;)
+    
+            //Types a message in the comment box
+            cy.get(&#x27;#comments&#x27;).click().type(&#x27;Test Cafe is alright.&#x27;)
+    
+            //Checks that the comment box contains the message
+            cy.get(&#x27;#comments&#x27;).should(&#x27;have.value&#x27;, &#x22;Test Cafe is alright.&#x22;)
+    
+            //Clears the comment box
+            cy.get(&#x27;#comments&#x27;).click().clear()
+    
+            //Checks that the comment box is empty again
+            cy.get(&#x27;#comments&#x27;).should(&#x27;not.have.value&#x27;)
+    
+            //Clicks the submit button
+            cy.get(&#x27;#submit-button&#x27;).click()
+    
+            //After the new page loads, checks that header contains my name
+            cy.get(&#x27;#article-header&#x27;).should(&#x27;contain&#x27;, &#x27;Adrian&#x27;)
+    
+            //Checks that the new page contains this link
+            cy.get(&#x27;p&#x27;).should(&#x27;contain&#x27;, &#x27;devexpress.github.io/testcafe&#x27;)
+    
+        })
+    })
+    </code>
+  </pre>
+</div>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+</script>
+
+</body>
+</html>

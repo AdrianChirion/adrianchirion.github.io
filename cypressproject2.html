@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--The main links/containers of the Navbar-->
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<!--Main content-->
+<div class="main">
+<div class="headerContainer">
+  <h1 class="mainHeaders" tabindex="0">Overview:</h1>
+</div>
+
+<!--Main paragraph-->
+<p class="mainParagraphs" tabindex="0">As part of learning Cypress, I along with a few other testers looked at a fake shopping website and picked up different parts of it to automate. I looked at creating automated tests for the newsletter, contact-us page, and a small part of the search functionality. First I created a GIVEN, WHEN, THEN scenario for each test case so that I would know what I was trying to achieve, and then I went on to start writing each test.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">Newsletter Test Execution:</h2>
+</div>
+
+<!--First video-->
+<div class="headerContainer">
+  <iframe class='embeddedVideo' width="896" height="504" src="https://www.youtube.com/embed/9-vzvlGrUZE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--First code block-->
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">My Cypress Code for the Newsletter:</h2>
+</div>
+
+<div class='sourceCode'>
+  <pre>
+    <code>
+    /*GIVEN that I subscribe to the Newsletter
+      WHEN I subscribe using an existing email
+      THEN an alert should appear saying that an error occured due to using an existing email*/
+    
+    describe(&#x27;Newletter Test 1 - Existing Email&#x27;, function() {
+        it(&#x27;Should scroll down to the Newsletter input and type in an existing email.&#x27;, function() {
+           
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+    
+        //Checks that Newsletter appears at the bottom of the page and scrolls to it
+        cy.get(&#x27;#newsletter_block_left&#x27;).scrollIntoView()
+    
+        //Scrolls down and clicks on the Newsletter email input and types in an email
+        cy.get(&#x27;#newsletter-input&#x27;).click().type(&#x27;JohnSmith22@gmail.com&#x27;)
+    
+        //Clicks on the Submit button to submit email
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+    
+        //Looks for the alert with the message &#x27;Newsletter : This email address is already registered.&#x27;
+        cy.get(&#x27;.alert&#x27;).scrollIntoView().should(&#x27;contain&#x27;, &#x27;Newsletter : This email address is already registered.&#x27;)
+    
+        })
+    })
+    
+    /*GIVEN that I subscribe to the Newsletter
+      WHEN I subscribe using an invalid email
+      THEN an alert should appear saying that an error occurred due to using an invalid email*/
+    
+    describe(&#x27;Newletter Test 2 - Invalid Emails&#x27;, function() {
+        it(&#x27;Should scroll down to the Newsletter input and type in invalid emails&#x27;, function() {
+    
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+        
+        //Checks that Newsletter appears at the bottom of the page and scrolls to it
+        cy.get(&#x27;#newsletter_block_left&#x27;).scrollIntoView()
+    
+        //Scrolls down and clicks on the Newsletter email input and types in an email
+        cy.get(&#x27;#newsletter-input&#x27;).click().type(&#x27;Invalid Email&#x27;)
+    
+        //Clicks on the Submit button to submit email
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+    
+        //Looks for the Invalid Email alert and checks that it contains the message &#x27;Newsletter : Invalid email address.&#x27;
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Newsletter : Invalid email address.&#x27;)
+    
+        //Repeats above three actions with other invalid entries
+        cy.get(&#x27;#newsletter-input&#x27;).scrollIntoView().click().type(&#x27;12345&#x27;)
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Newsletter : Invalid email address.&#x27;)
+    
+        cy.get(&#x27;#newsletter-input&#x27;).scrollIntoView().click().type(&#x27;!@#$%^&#x27;)
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Newsletter : Invalid email address.&#x27;)
+    
+        cy.get(&#x27;#newsletter-input&#x27;).scrollIntoView().click().type(&#x27;John@email&#x27;)
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Newsletter : Invalid email address.&#x27;)
+        
+        })
+    })
+    
+    /*GIVEN that I subscribe to the Newsletter
+      WHEN I use a non-existing, valid email
+      THEN the process should be successful with an alert saying it was successful*/
+    
+    describe(&#x27;Newletter Test 3 - New Email&#x27;, function() {
+        it(&#x27;Should scroll down to the Newsletter input and type in invalid emails&#x27;, function() {
+    
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+        
+        //Checks that Newsletter appears at the bottom of the page and scrolls to it
+        cy.get(&#x27;#newsletter_block_left&#x27;).scrollIntoView()
+    
+        //Scrolls down and clicks on the Newsletter email input and types in an email (number can be changed after being used)
+        cy.get(&#x27;#newsletter-input&#x27;).click().type(&#x27;JohnSmith200@gmail.com&#x27;)
+    
+        //Clicks on the Submit button to submit email
+        cy.get(&#x27;.form-group &#x3E; .btn&#x27;).click()
+    
+        //Looks for the alert with the message &#x27;Newsletter : This email address is already registered.&#x27;
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Newsletter : You have successfully subscribed to this newsletter.&#x27;)
+        
+        })
+    })
+    </code>
+  </pre>
+</div>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">Contact-Us Test Execution:</h2>
+</div>
+
+<!--Second video-->
+<div class="headerContainer">
+  <iframe class='embeddedVideo' width="896" height="504" src="https://www.youtube.com/embed/7U8irzrOU50" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Second code block-->
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">My Cypress Code for the Contact-Us Page:</h2>
+</div>
+
+<div class='sourceCode'>
+  <pre>
+    <code>
+    /*GIVEN that I go to the Contact US page
+      WHEN I input valid details 
+      THEN an alert should appear saying that the messsage was sent successfully*/
+    
+    describe(&#x27;Contact Us Test 1 - Successful Submission&#x27;, function() {
+        it(&#x27;Should go to the Contact Us page and enter in the correct details and submit successfully.&#x27;, function() {
+           
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+    
+        //Clicks the Contact Us button
+        cy.get(&#x27;#contact-link &#x3E; a&#x27;).click()
+    
+        //Clicks the dropdown menu and select the Customer Service option
+        cy.get(&#x27;#id_contact&#x27;).select(&#x27;Customer service&#x27;)
+    
+        //Clicks the email input and types in an email
+        cy.get(&#x27;#email&#x27;).click().type(&#x27;JohnSmith1990@gmail.com&#x27;)
+    
+        //Clicks the ID Order input and types in an ID
+        cy.get(&#x27;#id_order&#x27;).click().type(&#x27;483735&#x27;)
+    
+        //Clicks the Message box and types in a message
+        cy.get(&#x27;#message&#x27;).click().type(&#x27;Cypress is awesome!&#x27;)
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        //Checks that an alert message appears saying Your message has been successfully sent to our team.
+        cy.get(&#x27;.alert&#x27;).should(&#x27;contain&#x27;, &#x27;Your message has been successfully sent to our team.&#x27;)
+    
+        })
+    })
+    
+    /*GIVEN when I got to the Contact US page
+      WHEN I leave the fields emtpy and click submit
+      THEN there should be an error message telling me which fields must be populated*/
+    
+    describe(&#x27;Contact Us Test 2 - Error Handling with Empty Fields&#x27;, function() {
+        it(&#x27;Should go to the Contact Us page and attempt to submit with empty fields, filling each field as it goes and checking each error message.&#x27;, function() {
+           
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+    
+        //Clicks the Contact Us button
+        cy.get(&#x27;#contact-link &#x3E; a&#x27;).click()
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        //Checks that an alert appears and contains message saying Invalid email address.
+        cy.get(&#x27;ol &#x3E; li&#x27;).should(&#x27;contain&#x27;, &#x27;Invalid email address.&#x27;)
+    
+        //Clicks the email input and types in an email
+        cy.get(&#x27;#email&#x27;).click().type(&#x27;JohnSmith1990@gmail.com&#x27;)
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        //Checks that an alert appears and contains a message saying The message cannot be blank.
+        cy.get(&#x27;ol &#x3E; li&#x27;).should(&#x27;contain&#x27;, &#x27;The message cannot be blank.&#x27;)
+    
+        //Clicks the Message box and types in a message
+        cy.get(&#x27;#message&#x27;).click().type(&#x27;Cypress is awesome!&#x27;)
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        //Checks that an alert appears and contains message saying Please select a subject from the list provided.
+        cy.get(&#x27;ol &#x3E; li&#x27;).should(&#x27;contain&#x27;, &#x27;Please select a subject from the list provided.&#x27;)
+    
+        //Clicks the dropdown menu and select the Customer Service option
+        cy.get(&#x27;#id_contact&#x27;).select(&#x27;Customer service&#x27;)
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        })
+    })
+    
+    /*GIVEN I go to the Contact US page
+      WHEN I input invalid entries (such as for the email field)
+      THEN I should get an alert with an error telling me that my details and invaid*/
+    
+    describe(&#x27;Contact Us Test 3 - Error Handling with Invalid Entries&#x27;, function() {
+        it(&#x27;Should go to the Contact Us page and attempt to submit with invalid information.&#x27;, function() {
+           
+        //Visits the Fake Shopping Website
+        cy.visit(&#x27;http://automationpractice.com/index.php&#x27;, { timeout: 100000 })
+    
+        //Clicks the Contact Us button
+        cy.get(&#x27;#contact-link &#x3E; a&#x27;).click()
+    
+        //Clicks the email input and types in an invalid email
+        cy.get(&#x27;#email&#x27;).click().type(&#x27;12345&#x27;)
+    
+        //Clicks the Submit button
+        cy.get(&#x27;#submitMessage &#x3E; span&#x27;).click()
+    
+        //Checks that an alert appears and contains message saying Invalid email address.
+        cy.get(&#x27;ol &#x3E; li&#x27;).should(&#x27;contain&#x27;, &#x27;Invalid email address.&#x27;)
+    
+        })
+    })
+    </code>
+  </pre>
+</div>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">Search Function Test Execution:</h2>
+</div>
+
+<!--Third video-->
+<div class="headerContainer">
+  <iframe class='embeddedVideo' width="896" height="504" src="https://www.youtube.com/embed/DX2FT_hlucg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<!--Third code block-->
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0">My Cypress Code for the Search Function:</h2>
+</div>
+
+<div class='sourceCode'>
+  <pre>
+    <code>
+    /*GIVEN that I type a specific search term
+      WHEN I click the search button
+      THEN the page should return results based upon my search term*/
+    
+    describe('Search Testing 1 - Searching by Typing', function() {
+        it('Tests that it can search for an item by typing in something.', function() {
+    
+        //Visits the Fake Shopping Website
+        cy.visit('http://automationpractice.com/index.php', { timeout: 100000 })
+    
+        //Clicks the search input field at the top of the page and types in Shirt
+        cy.get('#search_query_top').click().type('Shirt')
+        
+        //Clicks the search button
+        cy.get('#searchbox > .btn').click()
+    
+        //Looks for a heading containing "Shirt"
+        cy.get('.lighter').should('contain', 'Shirt')
+    
+        //Clicks the search input field at the top of the page, clears it and then types in Dress
+        cy.get('#search_query_top').click().clear().type('Dress')
+        
+        //Clicks the search button
+        cy.get('#searchbox > .btn').click()
+    
+        //Looks for a heading containing "Dress"
+        cy.get('.lighter').should('contain', 'Dress')
+    
+        //Clicks the search input field at the top of the page and types in 12345
+        cy.get('#search_query_top').click().clear().type('12345')
+        
+        //Clicks the search button
+        cy.get('#searchbox > .btn').click()
+    
+        //Looks for an alert on the page
+        cy.get('.alert')
+    
+        })
+    })
+    </code>
+  </pre>
+</div>
+
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+// Get the navbar
+var navbar = document.getElementById("navbar");
+
+// Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+// Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+
+</script>
+
+</body>
+</html>

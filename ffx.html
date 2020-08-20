@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+  
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<div class="main">
+<!--Main Content-->
+<div class="headerContainer">
+  <h1 class="mainHeaders" tabindex="0"> Fairfax Media Contract </h1>
+</div>
+
+<p class="mainParagraphs" tabindex="0">In late May of 2018, I along with the rest of the Test-Ed team went out to Fairfax Media to take part in an accessibility project for their main websites, which involved finding and documenting any issues we found. 
+    The project was intended to last for four weeks and we were to mainly use the Sydney Morning Herald (SMH) and the Australian Financial Review (AFR) for testing since their other sites used the same template as the SMH.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Web Accessibility Testing </h2>
+</div>
+
+<p class="mainParagraphs" tabindex="0">Fairfax wanted to be known for being accessible and for being a trusted news source. Their business model focused on ads, however they were moving towards generating revenue by gaining more subscribers. 
+    In terms of accessibility, they were legally compliant (AA standard) due to their websites following good design principles, but they had still experienced a couple of complaints from vision impaired users. Overall they wanted to cater more towards the disabled with an emphasis on those who use screen readers such as NVDA or Jaws.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Our Approach </h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">We conducted testing focusing on the SMH and then on the AFR. 
+    The main areas of concern were: the login/logout journey, consumption of articles, index pages, the Shortlist which saved articles to be read later, and finally the subscription journey.</p>
+<p class="middleParagraphs" tabindex="0">For Windows we used NVDA (since NVDA and Jaws are very similar) to test the different features of the site, while on Mac we used Voiceover. We mainly focused on keyboard navigation, page structure, predictability, and the context given for each element.</p>
+<p class="middleParagraphs" tabindex="0">As our tests concluded we found that the SMH and AFR had similar issues. 
+    There were elements which either had no labels or had labels that didn’t give enough context to what it did, elements (such as the paragraphs on the articles themselves) that could not be selected with the tab button on the keyboard, and some elements which were meant to be hidden yet could still be selected using the tab key.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="Fairfax-1.png" style='width:100%;' alt="Null"></a></p>
+<p class = "middleParagraphs"><a target="_blank"><img src="Fairfax-2.png" style='width:100%;' alt="Null"></a></p>
+
+<p class="bottomParagraphs" tabindex="0">With accessibility testing on the SMH and AFR done, we moved onto testing the Google AMP (Accelerated Mobile Pages) version of SMH’s articles. The devices we used mainly consisted of Android phones and iPhones along with their built in screen readers Talkback and Voiceover. Again the main issues consisted of unclear labels for elements, and elements that could not be selected.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Accessibility Documentation </h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">As we tested through each website, we documented and categorised our bugs onto a Trello board based on their criticality. At the end of each day we met up with some of the Fairfax employees to present the most critical bugs to them. As we finished up the project we were told to move each bug from Trello to Jira so that they could be worked on by the Metro Web team who were responsible for the SMH and similar sites. 
+    Overall we completed the main accessibility project finding seventy-six separate issues within four days rather than four weeks, we were referred to as The A-Team for all the issues we found.</p>
+
+<p class = "bottomParagraphs"><a target="_blank"><img src="Fairfax-3.png" style='width:100%;' alt="Null"></a></p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> API Testing </h2>
+</div>
+
+<p class="mainParagraphs" tabindex="0">Since we completed our testing for accessibility earlier than expected, Fairfax decided to get us to help with testing their main APIs, API Front and API Content. Both of these APIs used GraphQL and had their own endpoints. We used the GrahiQL interface in order to get queries, then we started conducting both manual tests using Postman, and automated tests using Jest with these queries. 
+    When we finished we didn’t find that many issues, and the automated test suite for Jest was given to Fairfax.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Accessibility Testing their new Mobile Apps </h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">While we were doing the accessibility project for the web version of the Fairfax sites, a new Metro Apps team had started work on a new SMH app for both iOS and Android. They approached us and asked if we could also conduct accessibility testing on their app while it was in its early stages. 
+    We had a meeting with them to see how the app was designed, how it would function, gather requirements, and also give them insight on how screen readers tend to be used and some of the issues we previously found while testing on the web.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="Fairfax-4.png" style='width:100%;' alt="Null"></a></p>
+
+<p class="middleParagraphs" tabindex="0">After the meeting we were given different devices (tablets and mobiles) to test on both the Android and iOS versions of the app separately. Like with the AMP articles we used the Voiceover and Talkback screen readers and tested one of their early builds. 
+    We found twelve bugs that were similar to ones that we found in the web version of SMH, we first reported them on Trello for a presentation to the Metro Apps team followed by moving them to Jira to be fixed. </p>
+<p class="bottomParagraphs" tabindex="0">They found the presentation to be very valuable in understanding some of the considerations they need to make when moving forward with the apps. They mentioned that they would have to make accessibility everyone's responsibility, and make it a regular part of building the apps.</p>
+</div>
+
+</body>
+</html>

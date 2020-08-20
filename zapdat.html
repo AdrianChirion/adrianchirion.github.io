@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+  
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<div class="main">
+<!--Main Content-->
+<div class="headerContainer">
+<h1 class="mainHeaders" tabindex="0">Zapdat</h1>
+</div>
+
+<p class="mainParagraphs" tabindex="0">Zapdat was a program that would allow an organisation to easily follow up on accounting information and other important documents from its clients. 
+    It had a simplistic UI that would allow its users to learn its layout and features quickly and would use templates and email alerts to make the follow up process quicker.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">Our Understanding from the Client</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">The Zapdat platform must be simple to use for both the organisation’s staff and the client users. 
+    Templates and jobs for the client should be easy to set up, and the email alerts should remind clients of the tasks they have to complete without being too intrusive or annoying.</p>
+<p class="middleParagraphs" tabindex="0">Zapdat will mostly be used on PC and Mac, so we tested its simplicity and hunted for bugs on both platforms.</p>
+<p class="bottomParagraphs" tabindex="0">Since valuable information (such as Tax File Numbers) related to the clients and the organisations will go through and be stored on Zapdat’s databases, security would take a high priority to stop unwanted attackers from gaining access.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">Our Approach</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">We were given an organisation account called Test-Ed. From there we created both staff users (for the organisation’s side) and client users that were related to the organisation. 
+    We went through Zapdat with a fresh look in order to get a feel for the platform and see how simple it was to operate, we looked closely at template creation, the email alerts and the UI.</p>
+<p class="middleParagraphs" tabindex="0">After that we shifted our focus on Zapdat’s security. We had a look at <a href="https://www.owasp.org/index.php/Top_10-2017_Top_10" class="links">Owasp’s top ten security risks</a> for applications and tested to see if Zapdat was vulnerable to any of them. We found that Zapdat was particularly vulnerable to SQL injections and allowed for .exe files to be uploaded.
+    During our focus on the security aspects of Zapdat, we talked to some senior testers (such as Anne Marie) and a security expert (Te Rangikaiwhiria Kemara) to get further insight into the mind of an attacker and how good security is built from the ground up.</p>
+<p class="bottomParagraphs" tabindex="0">Finally we did a bug bash in which we went throughout Zapdat and searched for any bugs we could find. 
+    We placed all of our bug reports on a Trello board since Zapdat’s developers had used it previously.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">Bug Reporting and Other Documentation</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">We wrote up a document containing our first thoughts on Zapdat’s simplicity, we also created a spreadsheet that details some of the bugs we found related to email alerts, template creation, ease of use, and security.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="Zapdat-1.png" style='width:100%;' alt="Null"></a></p>
+<p class = "middleParagraphs"><a target="_blank"><img src="Zapdat-2.png" style='width:100%;' alt="Null"></a></p>
+
+<p class="middleParagraphs" tabindex="0">We put together a document that contained notes from Te Rangikaiwhiria Kemara detailing how good security is built and how even a simple website can be attacked frequently. We gave this to the Zapdat start-up.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="Zapdat-3.png" style='width:100%;' alt="Null"></a></p>
+
+<p class="middleParagraphs" tabindex="0">Finally we created a threat model that details four vulnerable areas of Zapdat and what attacks can be expected to be involved with those four areas.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="Zapdat-4.png" style='width:100%;' alt="Null"></a></p>
+
+<p class = "bottomParagraphs" tabindex="0">We had a final meeting with the client to present our findings. In the meeting we mentioned how Zapdat's quick and easy usability was a success, but that security should be a major consideration due to the fact that attackers could take down Zapdat's database easily and in turn take down all of the client's hard work. The client agreed with us and said that our security findings and security information was an eye opener, and would be very useful for making sure that Zapdat isn't as vulnerable in the future.</p>
+</div>
+
+</body>
+</html>

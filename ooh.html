@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+  
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<div class="main">
+<!--Main Content-->
+<div class="headerContainer">
+  <h1 class="mainHeaders" tabindex="0"> Adshel/oOh! Media </h1>
+</div>
+
+<p class="topParagraphs" tabindex="0">In early July 2018 I started my first paid contract with Test-Ed in which I worked with Anne-Marie Charret and two other testers for Adshel. Our job consisted of testing their latest platform for creating advertising campaigns for various companies,
+as well as covering the full end to end scenarios from creating a campaign to sending individual work orders for postings. This new platform was to replace their legacy system and as such they were setting up data migrations so that all of their previous campaigns and their information could be moved over. </p>
+
+<p class = "bottomParagraphs"><a target="_blank"><img src="oOh!-1.jpg" style='width:100%;' alt="Null"></a></p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Our Approach </h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">We started the project by first learning about the different processes that occured on Adshel's main platform through various meetings and through our own exploration. Afterwards we split the team up so that we were all covering a different section of Adshel's overall system. 
+I was looking after the Production side of the platform which involved managing and assigning the poster designs that Adshel would receive from their clients. Testing involved a mix of looking at various issues raised through Jira tickets by users as well as exploratory testing. We needed to focus on testing through Windows and the Chrome browser since that was what their users would be using as standard.
+We also setup our own Trello board so that we could have a way to view the work assigned to each of us and help one another if we had capacity, plus we carried out daily meetings for the testing team which we used to discuss the overall system and learn more from one another.</p>
+
+<p class="middleParagraphs" tabindex="0">As our contracts continued I started to cover testing on some of the other sections of the main platform, such as the Operations section, which involved creating and managing the individual work orders that would provide workers with information on which posters should be posted, as well as when, and where. 
+From here I continued on to also pickup integration testing, each work order would be created from the main platform and move on to other parts of the overall system before finally reaching the workers themselves. My task had changed to conduct end to end testing to make sure that the work orders were being processed
+correctly through each part of the overall system without any missing or incorrect information. There were also various rules with the work orders to reduce user error which I also covered. With each test we used <a href="https://www.qasymphony.com/software-testing-tools/qtest-manager/test-case-management/" class="links" rel="noopener noreferrer" target="_blank">qTest</a> to record each scenerio and each step taken during testing so that Adshel would have a complete test suite that they could use in the future.</p>
+
+<p class="bottomParagraphs" tabindex="0">My time with Adshel ended with me working on automating some of the test cases that were written in qTest. I learned that the dev team had already written some automated tests using <a href="https://selenium.dev/" class="links" rel="noopener noreferrer" target="_blank">Selenium</a> for Chrome,
+as such, I picked up Selenium along with its Chrome Driver and began looking through the whole end to end process via qTest and writing automated tests for each, I seperated them so that they were identical to what we had in qTest thus making it easy to follow. The challenge with automated testing was going through and being able to select and interect with each element needed (such as text inputs and various buttons) and have it flow as if it was an actual user going through their usual processes.</p>
+
+<div class="headerContainer">
+  <h2 class="workHeaders" tabindex="0"> Moving to oOh! Media </h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">Just prior to starting my contract, oOh! Media had bought Adshel. By the end of 2018 they had decided to replace Adshel's new platform with their own, however other parts of the overall system would continue to be used and integrated from Adshel's side. We moved offices from St Leonards to North Sydney and began working with new teams under oOh!.
+Their project was very similar to Adshel's other than their different platform, there was still a need for Data Migration, and many of Adshel's processes had to be retested on the oOh! platform as they were incorporated. The challenge of communication between people from Adshel and oOh! Media was present in the early stages of the project as both sides had to learn of each other's processes, how they could be implemented to best suite the users and the clients, and priortise each feature and bug fix.
+This issue was overcome however, and with our established understanding of processes and products from both businesses we were able to conduct the same testing on oOh!'s platform and complete it in shorter time than we did originally for Adshel.</p>
+
+<p class="middleParagraphs" tabindex="0">As my testing on the platform wrapped up, I was moved to the Data and Reporting team who were lacking a dedicated QA. I joined the team and began learning about the various reports that would be given to users in order to help them keep track of information related to their roles (e.g. campaign or design information). Testing the reports consisted of checking the layout of the report itself so that it was readable, and mostly checking the data itself to ensure that it flowed from the system to the reports without any errors.
+This was accomplished by using <a href="https://databricks.com/product/unified-data-analytics-platform" class="links" rel="noopener noreferrer" target="_blank">Data Bricks</a> and <a href="https://www.jetbrains.com/datagrip/?gclid=Cj0KCQiAsbrxBRDpARIsAAnnz_NwJ9-YoRV35hDUpOD2PsvYq_nxRbiMD9KUTEc-r3RJHxgwzBTcuiUaAp-xEALw_wcB" class="links" rel="noopener noreferrer" target="_blank">Data Grips</a>, as well as learning SQL so that I could check the data before it entered the reports, if everything looked correct on the backend I would then check the data on the reports themselves. This was done in order to help isolate any issues we came across, and make it easier to determine whether the issue was with the report or in the back end.</p>
+
+<p class="middleParagraphs" tabindex="0">Finally for the reporting team, I was given the task of performance testing for the reports. They used PowerBI to create each report and the performance depended on how much data was being pulled through, and the amount of elements displayed within the report (graphs, tables and so on). In order to test the load of the report, I downloaded the reports as .pbx files and loaded them up onto PowerBI Desktop, I then used <a href="https://daxstudio.org/" class="links" rel="noopener noreferrer" target="_blank">DAX Studio</a> and connected it to PowerBI Desktop. From there I could run the report and DAX Studio would record the queries used to fetch the data requested (including filters), I would then copy the queries and rerun them multiple times recording the time taken for the queries to complete and for the data to be fetched, getting an average time.</p>
+
+<p class="bottomParagraphs" tabindex="0">During the new project at oOh! Media a lot of the same approaches were taken. We continued to use Jira and still conducted some of our own exploratory testing, weekly QA meetings as well as daily standups were also done so that the teams could learn from each other and communicate more easily in terms of what the priority is on existing tasks and what each member has achieved since the last standup (e.g. my updates consisted on what tests I completed and the outcomes of those tests). 
+Personally I began keeping track of testing tasks both inside and ouside Jira, setting up reminders to conduct desk checks with devs before picking up their tickets, as well as adding my test notes for tickets that would come up in future sprints (as part of preparation) or adding them to our Confluence pages acting as an archive. Overall the contract was a great learning experience as I got to experience two companies, and although they were in the same industry they had different cultures, ways of working, and people. Time management and prioritising were the biggest things I improved upon especially when dealing with various deadlines and a huge company merge.</p>
+
+</body>
+</html>
