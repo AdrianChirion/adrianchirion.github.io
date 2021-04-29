@@ -1,0 +1,380 @@
+    /* ABOUT ME PAGE: */
+    
+    /* This is the style for the background image. */
+    body {
+      background-color: #0C2D48;
+      background-size: cover;
+      background-position: center;
+      color:  white;
+      font-family: constantia;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .links {
+      color: rgb(255,253,60);
+      text-decoration: none;
+    }
+    
+    /* These are all the styling for the nav bar. */
+    .navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+    text-align: center;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    }
+
+    .navbar a {
+    color: #fffd3c;
+    text-align: center;
+    padding: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: Book Antiqua;
+    position: relative;
+    top: 7.5px;
+    border-radius: 10px;
+    border: 2px solid #fffd3c;
+    box-shadow: 0 4px 8px black;
+    }
+    
+    .navbar a:hover {
+    background-color: #fffd3c;
+    color: #000000; 
+    }
+    
+    .navbar a:active {
+    background-color: #fffd3c;
+    color: black;
+    }
+    
+    /* This is used to make the navbar stick to the top when scrolling. */
+    .content {
+    padding: 20px;
+    }
+
+    .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    }
+
+    .sticky + .content {
+    padding-top: 60px;
+    }
+    
+    @media screen and (max-width: 600px) {
+      .navbar a {
+        float: none;
+        display: inline-block;
+        overflow: visible;
+        padding: 5px;
+        font-size: 25px;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0px;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .navbar a {
+        float: none;
+        display: inline-block;
+        overflow: visible;
+        padding: 5px;
+        font-size: 18px;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0px;
+      }
+    }
+
+    @media screen and (max-width: 420px) {
+      .navbar a {
+        float: none;
+        display: inline-block;
+        overflow: visible;
+        padding: 5px;
+        font-size: 16px;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0px;
+      }
+    }
+
+    @media screen and (max-width: 370px) {
+      .navbar a {
+        float: none;
+        display: inline-block;
+        overflow: visible;
+        padding: 5px;
+        font-size: 14px;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        border-top: none;
+        border-bottom: none;
+        border-radius: 0px;
+      }
+    }
+
+    /* CSS for the main paragraphs. */
+    p {
+      font-size: 18px;
+      font-family: Merriweather, cursive;
+      color: #D3D3D3;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.9);
+      max-width: 800px;
+    }
+    
+    /* CSS for the unordered list. */
+    ul {
+      font-size: 18px;
+      font-family: Merriweather, cursive;
+      color: #fffd3c;
+      margin: auto;
+      background: rgba(0, 0, 0, 0.9);
+      max-width: 790px;
+      border-right: 2px solid;
+      border-left: 2px solid;
+      border-color: #fffd3c;
+    }
+      
+    /* CSS for the image of me. */
+    .profile-photo {
+    height: 200px;
+    position: relative;
+    bottom: 8;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: 2px #fffd3c solid;
+    border-radius: 50%;
+    }
+
+    /* CSS for the green borders around the paragraphs, ul, and line breaks. */
+    .topborder {
+        border-top: 2px solid;
+        border-right: 2px solid;
+        border-left: 2px solid;
+        padding-top: 15px;
+        border-color: #fffd3c;
+    }
+
+    .sideBorders {
+      border-right: 2px solid;
+      border-left: 2px solid;
+      border-color: #fffd3c;
+    }
+
+    .bottomBorder {
+        border-bottom: 2px solid;
+        border-right: 2px solid;
+        border-left: 2px solid;
+        padding-bottom: 15px;
+        border-color: #fffd3c;
+    }
+
+    .brParagraph {
+        border-right: 2px solid;
+        border-left: 2px solid;
+        height: 3%;
+        border-color: #fffd3c;
+    }
+
+    /* WORK PAGE: */
+
+      /* Styling for the text that appears below the images and the text in the resources page. */
+      .names {
+        font-size: 25;
+        color: #fffd3c;
+        font-family: Merriweather, cursive;
+        text-align: center;
+      }
+
+      .resourceNames {
+        font-size: 2.5vmin;
+        text-decoration: none;
+        color: #fffd3c;
+        font-family: Merriweather, cursive;
+        text-align: center;
+      }
+
+      .resourceLink:link {
+        color: #fffd3c;
+      }
+
+      .resourceLink:visited {
+        color: #fffd3c;
+      }
+
+      .mainParagraphs {
+        border: 2px solid;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        border-color: #fffd3c;
+      }
+
+      .topParagraphs {
+        border-top: 2px solid;
+        border-left: 2px solid;
+        border-right: 2px solid;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        border-color: #fffd3c;
+      }
+
+      .middleParagraphs {
+        border-left: 2px solid;
+        border-right: 2px solid;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin-top: 0;
+        border-color: #fffd3c;
+      }
+
+      .bottomParagraphs {
+        border-left: 2px solid;
+        border-right: 2px solid;
+        padding-top: 15px;
+        border-bottom: 2px solid;
+        padding-bottom: 15px;
+        border-color: #fffd3c;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        justify-items: center;
+        align-items: center;
+      }
+
+      .grid-heading-3{
+        grid-column: 1 / span 3;
+        padding-left: 2.5%;
+      }
+
+      .grid-image-1 {
+        max-width: 95%;
+        padding-left: 7.5%;
+      }
+    
+      .grid-name-1 {
+        padding-left: 7.5%;
+      }
+
+
+
+
+
+/* Styling for all of the main headers. */
+.headerContainer {
+  text-align: center;
+}
+
+.mainHeaders{
+  font-size: 30px;
+  font-family: Merriweather, cursive;
+  text-align: center; 
+  background-color:rgba(0, 0, 0, 0.9);
+  border: 2px solid;
+  margin: auto;
+  margin-top: 65px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  color: #fffd3c;
+}
+
+.bodyHeaders {
+  font-size: 25px;
+  font-family: Merriweather, cursive;
+  text-align: center; 
+  background-color:rgba(0, 0, 0, 0.9);
+  border: 2px solid;
+  margin: auto;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  color: #fffd3c;
+}
+
+.workHeaders {
+  font-size: 25px;
+  font-family: Merriweather, cursive;
+  text-align: center; 
+  background-color:rgba(0, 0, 0, 0.9);
+  border: 2px solid;
+  margin: auto;
+  margin-top: 20px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  color: #fffd3c;
+}
+
+
+
+
+
+/* Styling for Work and Skills pages images. */
+
+.imageContainer {
+  text-align: center;
+}
+
+.Images {
+  height: 200px;
+  width: 400px;
+  border: 2px solid;
+  color: #fffd3c;
+  max-width: 95%;
+}
+
+.workImages {
+  border: 2px solid;
+  color: #fffd3c;
+}
+
+
+/* Styling for the code snippets in the Cypress section. */
+
+.sourceCode {
+  background-color: #C0C0C0; 
+  padding-left: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: black;
+} 
+
+/* Styling for the embedded videos in the Cypress section. */
+
+.embeddedVideo {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-top: 20px;
+}
