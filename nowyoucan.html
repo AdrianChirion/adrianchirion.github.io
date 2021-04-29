@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+  
+</head>
+
+<body>
+
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<div class="main">
+<!--Main Content-->
+<div class="headerContainer">
+<h1 class="mainHeaders" tabindex="0">NowYouCan</h1>
+</div>
+
+<p class="mainParagraphs" tabindex="0">In late September of 2020 I began a contract for <a href="https://nowyoucan.io/" class="links" rel="noopener noreferrer" target="_blank">NowYouCan</a>, a company who was working on its own building management system to provide for their clients. My job was not only that of a software tester but also as a test analyst and product manager. In my role I was to work with their developers to deliver a satisfactory product, analyse business goals, analyse the user experience and customer feedback, as well as discuss ideas and prioritise different features or changes.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">Understanding the Product and Situation</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">The system consisted of a webapp as well as two mobile apps. On the webapp a building manager could setup their buildings including information such the address, number of floors, existing facilities, and any documentation. They could edit this information, setup work orders for any trade experts who need to work on a building, review any issues raised by its tenants and create profiles for these users. Their mobile apps on the other hand was to be used by the tenants to report any issues found in the building or by cleaners/carers to report their progress as well as sign in and sign out.</p>
+<p class="bottomParagraphs" tabindex="0">The goal of the product was to make it easier for a building manager to keep track of incidents, assets, and work orders throughout all of their buildings. All information would be accessed and stored on the single platform as an archive, and would allow the manager to see reports that can help them make quick and informed decisions, thus saving time and costs.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">My Approach</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">The first couple of days was spent learning about the overall product, the different users, the terminology, how it worked, and how it was all connected. As I gained an understanding for the system I went in myself and explored it as a first time user noting down my experience as I went. Any bugs or issues I found I reported straight to my manager labelling them in priority from the lowest blockers to highest blockers and from there raised the issues for the devs to look into.</p>
+<p class="middleParagraphs" tabindex="0">Overall as we moved on with the product, I had section by section introduced to me in which I took a similar approach of exploring it and checking that it worked as expected by the manager. For each section (WH&S documentation, facility booking, job completion, etc) I did not only test and raise bugs, but also discussed any ideas on how certain features or processes could be changed/added to better suit the user or to make it easier for a user to follow since this was one of our main goals. Priority was mostly placed on features requested by existing clients, followed then by features or functionality that would possibly attracted new clients or be used by existing clients. The webapp was tested on my laptop, meanwhile testing on the mobile apps took place on my own phone and also on a program called <a href="https://www.ldplayer.net/" class="links" rel="noopener noreferrer" target="_blank">LD Player</a> which allowed me to simulate android on my PC and made it quicker to check that the webapp and mobile apps were properly connected.</p>
+<p class="bottomParagraphs" tabindex="0">Other work that was done consisted of looking at similar products for ideas, mainly seeing how they operated and seeing what values seperated them from NowYouCan. I also conducted basic security testing on their main website and webapps using both Postman and Chrome dev tools by looking at their security headers to make sure that they were activated and configured correctly, and to make sure that no sensitive information could be picked up. I provided any findings to my manager and provided links to information regarding security headers for them to look further into.</p>
+
+<div class="headerContainer">
+<h2 class="workHeaders" tabindex="0">Bug Reporting and Other Documentation</h2>
+</div>
+
+<p class="topParagraphs" tabindex="0">The majority of documentation for this project was created for my own use so that I could keep track of my work and prioritise everything. I created a trello board for this project and recorded by day to day activities, recorded any important information as well as things I needed to learn about the product. I also kept track of tasks and sorted them based on the Eisenhower Matrix in which I examined each task and placed them in the column I believed they belonged to.</p>
+
+<p class = "middleParagraphs"><a target="_blank"><img src="NowYouCan-1.png" style='width:100%;' alt="Null"></a></p>
+<p class = "middleParagraphs"><a target="_blank"><img src="NowYouCan-2.png" style='width:100%;' alt="Null"></a></p>
+
+<p class = "bottomParagraphs" tabindex="0">Remaining documentation consisted of spreadsheets with details on issues I found, the idea being that I would show them to my manager and discuss which ones should be raised as Jira tickets for the developers to look into. On top of this any new ideas for fuctionality or changes to features would also be raised as detailed reports in Jira containing images on how we expect them to work and look. Further discussion with developers also took place in meetings, however this was difficult since we were in different time zones (me being in Australia and the devs being from India).</p>
+</div>
+
+</body>
+</html>
