@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Come check out my portfolio! It contains all of the work that I've done related to software testing as well as some coding projects that I have completeted.">
+<meta name="keywords" content="HTML, CSS, JavaScript, Software Testing, Portfolio">
+<meta name="author" content="Adrian Chirion">
+
+<html lang="en">
+<head>
+
+  <title>Adrian Chirion's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+  <link href="CSS/default.css" rel="stylesheet" type="text/css">
+  
+</head>
+
+<body>
+<!--The main links/containers of the Navbar-->
+<div class="navbar">
+  <a href=index.html tabindex="0">About Me</a>
+  <a href=work.html tabindex="0">Work</a>
+  <a href=skills.html tabindex="0">Skills</a>
+  <a href=resources.html tabindex="0">Resources</a>
+</div>
+
+<!--Main content-->
+<div class="main">
+<div class="headerContainer">
+
+<!--Main header-->
+<h1 class="mainHeaders" tabindex="0">Adrian Chirion</h1>
+</div>
+
+<!--Profile picture-->
+<img class="profile-photo" src="profile-photo.png" alt="picture"/>
+
+<!--Main paragraphs-->
+<p class="topborder" tabindex="0">Ever since I got my first PC I've been interested in how software does its magic. This is what got me into learning about software development, more specifically how software can be tested effectively. </p>
+<!--Paragraph for creating a break-->
+<p class="sideBorders"><br></p>
+
+<!--Continuing main paragraphs-->
+<p class="sideBorders" tabindex="0">I have trained under <a href="https://www.test-ed.com.au/" class="links" rel="noopener noreferrer" target="_blank">Test-Ed</a> to become a context driven software tester, this included training with <a href="https://testingtimes.com.au/" class="links" rel="noopener noreferrer" target="_blank">Anne-Marie Charrett</a>, and <a href="https://www.atlassian.com/" class="links" rel="noopener noreferrer" target="_blank">Atlassian</a>. So far I have completed an 18 month long contract with <a href="https://oohmedia.com.au/" class="links" rel="noopener noreferrer" target="_blank">oOh! Media/Adshel</a> as well as contracts with other companies, have done internships with <a href="https://safetyculture.com/about/" class="links" rel="noopener noreferrer" target="_blank">SafetyCulture</a> and <a href="https://www.fairfaxmedia.com.au/" class="links" rel="noopener noreferrer" target="_blank">Fairfax</a>, and have worked with several different <a href="https://fishburners.org/" class="links" rel="noopener noreferrer" target="_blank">Fishburner Start-ups</a>.</p>
+<p class="sideBorders"><br></p>
+<p class="sideBorders" tabindex="0">In the short term I plan on working in an agile product development environment and to gain more experience with coding, unit testing, test automation, and API testing. In the long term I aim to become a technical writer or trainer as I love expressing myself through writing, and presenting new topics to people. I hope to continue to grow and meet new people as I get into my next job.</p>
+<p class="sideBorders"><br></p>
+<p class="bottomBorder" tabindex="0">This portfolio contains further detail on my technical <a href=skills.html class="links" rel="noopener noreferrer">skills</a>, communication skills, projects I worked on during my time in Test-Ed, and finally all of the <a href=work.html class="links" rel="noopener noreferrer">jobs</a> I have completed during my career.</p>
+</div>
+
+<div class="column-wrapper">
+<div class="row">
+  <div class="column">
+    <h2 class="bodyHeaders">My Skills:</h2>
+    <ul class="allBorders">
+      <li>Team Communication</li>
+      <li>Exploratory Testing</li>
+      <li>Session Based Testing</li>
+      <li>API Testing</li>
+      <li>Test Automation</li>
+      <li>Documentation Writing</li>
+      <li>User Experience Journey</li>
+      <li>Product/Business Analysis</li>
+    </ul>
+  </div>
+  <div class="column">
+    <h2 class="bodyHeaders">My Tools</h2>
+    <ul class="allBorders">
+      <li>Jira</li>
+      <li>Selenium</li>
+      <li>Cypress</li>
+      <li>Selenium</li>
+      <li>Postman</li>
+      <li>Chrome Dev Tools</li>
+      <li>LD Player</li>
+      <li>qTest Explorer</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<!--<ul class="ul">
+  <li>Team communication</li>
+  <li>Exploratory Testing</li>
+  <li>Session Based Testing</li>
+  <li>API Testing</li>
+  <li>Cypress Automation</li>
+  <li>Documentation Writing</li>
+  <li>Jira and Trello</li>
+  <li>User Experience Journey</li>
+  <li>Product Analysis</li>
+</ul>-->
+
+<!--Code for the Navbar-->
+<script>
+//When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+//Get the navbar
+var navbar = document.getElementById("navbar");
+
+//Get the offset position of the navbar
+var sticky = navbar.offsetTop;
+
+//Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+</body>
+</html>
