@@ -2,7 +2,7 @@
     
     /* This is the style for the background image. */
     body {
-      background-color: #0C2D48;
+      background-image: url('../CSS/background.jpg');
       background-size: cover;
       background-position: center;
       color:  white;
@@ -12,14 +12,14 @@
     }
 
     .links {
-      color: rgb(255,253,60);
+      color: rgb(0, 213, 255);
       text-decoration: none;
     }
     
     /* These are all the styling for the nav bar. */
     .navbar {
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(27, 41, 109, 0.9);
     text-align: center;
     height: 45px;
     position: fixed;
@@ -29,7 +29,7 @@
     }
 
     .navbar a {
-    color: #fffd3c;
+    color: #ffffff;
     text-align: center;
     padding: 15px;
     text-decoration: none;
@@ -38,17 +38,17 @@
     position: relative;
     top: 7.5px;
     border-radius: 10px;
-    border: 2px solid #fffd3c;
+    border: 2px solid #ffffff;
     box-shadow: 0 4px 8px black;
     }
     
     .navbar a:hover {
-    background-color: #fffd3c;
+    background-color: #0f36b6;
     color: #000000; 
     }
     
     .navbar a:active {
-    background-color: #fffd3c;
+    background-color: #ffffff;
     color: black;
     }
     
@@ -135,7 +135,7 @@
       padding-left: 15px;
       padding-right: 15px;
       margin: auto;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(65, 83, 173, 0.4);
       max-width: 800px;
     }
     
@@ -145,7 +145,7 @@
       font-family: Merriweather, cursive;
       color: #D3D3D3;
       margin: auto;
-      background: rgba(0, 0, 0, 0.9);
+      background: rgba(65, 83, 173, 0.4);
       max-width: 790px;
       border-right: 2px solid;
       border-left: 2px solid;
@@ -162,7 +162,6 @@
     margin-right: auto;
     margin-top: 15px;
     margin-bottom: 15px;
-    border: 2px #fffd3c solid;
     border-radius: 50%;
     }
 
@@ -172,13 +171,13 @@
         border-right: 2px solid;
         border-left: 2px solid;
         padding-top: 15px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
     }
 
     .sideBorders {
       border-right: 2px solid;
       border-left: 2px solid;
-      border-color: #fffd3c;
+      border-color: #ffffff;
     }
 
     .bottomBorder {
@@ -186,7 +185,7 @@
         border-right: 2px solid;
         border-left: 2px solid;
         padding-bottom: 15px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
     }
 
     .allBorders {
@@ -196,14 +195,14 @@
         border-left: 2px solid;
         padding-top: 15px;
         padding-bottom: 15px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
     }
 
     .brParagraph {
         border-right: 2px solid;
         border-left: 2px solid;
         height: 3%;
-        border-color: #fffd3c;
+        border-color: #ffffff;
     }
 
     /* WORK PAGE: */
@@ -211,7 +210,7 @@
       /* Styling for the text that appears below the images and the text in the resources page. */
       .names {
         font-size: 25;
-        color: #fffd3c;
+        color: #ffffff;
         font-family: Merriweather, cursive;
         text-align: center;
       }
@@ -219,17 +218,17 @@
       .resourceNames {
         font-size: 2.5vmin;
         text-decoration: none;
-        color: #fffd3c;
+        color: #ffffff;
         font-family: Merriweather, cursive;
         text-align: center;
       }
 
       .resourceLink:link {
-        color: #fffd3c;
+        color: #ffffff;
       }
 
       .resourceLink:visited {
-        color: #fffd3c;
+        color: #ffffff;
       }
 
       .mainParagraphs {
@@ -237,7 +236,7 @@
         padding-top: 15px;
         padding-bottom: 15px;
         margin-top: 20px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
       }
 
       .topParagraphs {
@@ -247,7 +246,7 @@
         padding-top: 15px;
         padding-bottom: 15px;
         margin-top: 20px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
       }
 
       .middleParagraphs {
@@ -256,7 +255,7 @@
         padding-top: 15px;
         padding-bottom: 15px;
         margin-top: 0;
-        border-color: #fffd3c;
+        border-color: #ffffff;
       }
 
       .bottomParagraphs {
@@ -265,7 +264,7 @@
         padding-top: 15px;
         border-bottom: 2px solid;
         padding-bottom: 15px;
-        border-color: #fffd3c;
+        border-color: #ffffff;
       }
 
       .grid-container {
@@ -322,7 +321,7 @@
   font-size: 30px;
   font-family: Merriweather, cursive;
   text-align: center; 
-  background-color:rgba(0, 0, 0, 0.9);
+  background-color:rgba(65, 83, 173, 0.4);
   border: 2px solid;
   margin: auto;
   margin-top: 65px;
@@ -331,14 +330,14 @@
   padding-top: 10px;
   padding-bottom: 10px;
   display: inline-block;
-  color: #fffd3c;
+  color: #ffffff;
 }
 
 .bodyHeaders {
   font-size: 25px;
   font-family: Merriweather, cursive;
   text-align: center; 
-  background-color:rgba(0, 0, 0, 0.9);
+  background-color:rgba(65, 83, 173, 0.4);
   border: 2px solid;
   margin: auto;
   margin-top: 40px;
@@ -348,14 +347,14 @@
   padding-top: 10px;
   padding-bottom: 10px;
   display: inline-block;
-  color: #fffd3c;
+  color: #ffffff;
 }
 
 .workHeaders {
   font-size: 25px;
   font-family: Merriweather, cursive;
   text-align: center; 
-  background-color:rgba(0, 0, 0, 0.9);
+  background-color:rgba(65, 83, 173, 0.4);
   border: 2px solid;
   margin: auto;
   margin-top: 20px;
@@ -364,7 +363,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   display: inline-block;
-  color: #fffd3c;
+  color: #ffffff;
 }
 
 
@@ -381,13 +380,13 @@
   height: 200px;
   width: 400px;
   border: 2px solid;
-  color: #fffd3c;
+  color: #ffffff;
   max-width: 95%;
 }
 
 .workImages {
   border: 2px solid;
-  color: #fffd3c;
+  color: #ffffff;
 }
 
 
